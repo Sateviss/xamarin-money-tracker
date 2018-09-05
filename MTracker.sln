@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTracker.Android", "MTracker.Android\MTracker.Android.csproj", "{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTracker", "MTracker\MTracker.csproj", "{8417CA00-F94B-42A3-84C1-5B0445C3C5A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8417CA00-F94B-42A3-84C1-5B0445C3C5A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8417CA00-F94B-42A3-84C1-5B0445C3C5A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8417CA00-F94B-42A3-84C1-5B0445C3C5A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8417CA00-F94B-42A3-84C1-5B0445C3C5A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
