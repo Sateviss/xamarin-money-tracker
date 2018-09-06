@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTracker.Android", "MTracker.Android\MTracker.Android.csproj", "{48BF8B4C-CC9B-4974-A29A-561D1038A8A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTracker.UITests", "MTracker.UITests\MTracker.UITests.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTracker", "MTracker\MTracker.csproj", "{2ED6DAB2-1ED0-4EA6-A27F-95BFCB2012B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48BF8B4C-CC9B-4974-A29A-561D1038A8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BF8B4C-CC9B-4974-A29A-561D1038A8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BF8B4C-CC9B-4974-A29A-561D1038A8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BF8B4C-CC9B-4974-A29A-561D1038A8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED6DAB2-1ED0-4EA6-A27F-95BFCB2012B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED6DAB2-1ED0-4EA6-A27F-95BFCB2012B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED6DAB2-1ED0-4EA6-A27F-95BFCB2012B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED6DAB2-1ED0-4EA6-A27F-95BFCB2012B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
