@@ -1,12 +1,24 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MTracker.Data;
+using MTracker.Views;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MTracker
 {
     public partial class App : Application
     {
+        static EntryAccessor accessor;
+
+        public static EntryAccessor EntryAccessor 
+        {
+            get 
+            {
+                if (accessor == null)
+                    accessor = new EntryAccessor();
+                return accessor;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
