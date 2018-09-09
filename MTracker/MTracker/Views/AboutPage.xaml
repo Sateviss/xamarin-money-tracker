@@ -3,7 +3,8 @@
    xmlns="http://xamarin.com/schemas/2014/forms"
    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
    x:Class="MTracker.Views.AboutPage" 
-   xmlns:vm="clr-namespace:MTracker.ViewModel">
+   xmlns:vm="clr-namespace:MTracker.ViewModel"
+   Title="About">
    <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MTracker.Views.EntriesPage"
+    Title="Entries">
+    <ContentPage.Content>
+        <ScrollView
+            x:Name="ScrollArea"
+            VerticalOptions="FillAndExpand">
+            <ListView
+                SelectionMode="None"
+                x:Name="EntriesList"
+                RowHeight="72">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal">
+                                    <Button
+                                        Margin="16"
+                                        WidthRequest="40"
+                                        HeightRequest="40"
+                                        CornerRadius="20"
+                                        BackgroundColor="Red"/>
+                                <StackLayout
+                                    VerticalOptions="FillAndExpand"
+                                    Orientation="Vertical">
+                                    <Label
+                                        FontSize="16"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="End"
+                                        Text="{Binding Name}"/>
+                                    <Label
+                                        FontSize="12"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="Start"
+                                        Text="11.09.2001 18:22:19"/>
+                                </StackLayout>
+                                    <Label
+                                        Margin="16"
+                                        Text="{Binding Amount, StringFormat='{0:F2} $'}"
+                                        HorizontalTextAlignment="End"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize="24"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

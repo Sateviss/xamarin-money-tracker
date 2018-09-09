@@ -5,7 +5,7 @@
     xmlns:views="clr-namespace:MTracker.Views" 
     x:Class="MTracker.Views.MainPage"
     MasterBehavior="Popover"
-    Title="Kekloltestapp">
+    Title="Main">
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>

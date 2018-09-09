@@ -24,6 +24,7 @@
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Views\MyPage.xaml.cs" />
+    <Compile Remove="Data\Database.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\AboutPage.xaml.cs">

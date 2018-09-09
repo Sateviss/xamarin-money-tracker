@@ -7,14 +7,14 @@ namespace MTracker
 {
     public partial class App : Application
     {
-        static EntryAccessor accessor;
+        static DynamicEntryAccessor accessor;
 
-        public static EntryAccessor EntryAccessor 
+        public static DynamicEntryAccessor EntryAccessor 
         {
             get 
             {
                 if (accessor == null)
-                    accessor = new EntryAccessor();
+                    accessor = new DynamicEntryAccessor();
                 return accessor;
             }
         }
