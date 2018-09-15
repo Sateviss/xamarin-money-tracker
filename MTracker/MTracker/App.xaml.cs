@@ -5,24 +5,16 @@ using MTracker.Views;
 
 namespace MTracker
 {
+
     public partial class App : Application
     {
-        static DynamicEntryAccessor accessor;
-
-        public static DynamicEntryAccessor EntryAccessor 
-        {
-            get 
-            {
-                if (accessor == null)
-                    accessor = new DynamicEntryAccessor();
-                return accessor;
-            }
-        }
+        public static DynamicEntryAccessor EntryAccessor;
 
         public App()
         {
             InitializeComponent();
-
+            EntryAccessor = new DynamicEntryAccessor();
+            EntryAccessor.CollectionChanged += (sender, e) => { System.Diagnostics.Debug.WriteLine("CollectionChanged"); };
             MainPage = new MainPage();
         }
 

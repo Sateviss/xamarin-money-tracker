@@ -65,6 +65,69 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\drawable\baseline_delete_24.xml">
+      <Link>Resources\Resources\drawable\baseline_delete_24.xml</Link>
+    </None>
+    <None Include="Resources\drawable-hdpi\baseline_delete_white_18.png">
+      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_18.png</Link>
+    </None>
+    <None Include="Resources\drawable-hdpi\baseline_delete_white_24.png">
+      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_24.png</Link>
+    </None>
+    <None Include="Resources\drawable-hdpi\baseline_delete_white_36.png">
+      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_36.png</Link>
+    </None>
+    <None Include="Resources\drawable-hdpi\baseline_delete_white_48.png">
+      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_48.png</Link>
+    </None>
+    <None Include="Resources\drawable-mdpi\baseline_delete_white_18.png">
+      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_18.png</Link>
+    </None>
+    <None Include="Resources\drawable-mdpi\baseline_delete_white_24.png">
+      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_24.png</Link>
+    </None>
+    <None Include="Resources\drawable-mdpi\baseline_delete_white_36.png">
+      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_36.png</Link>
+    </None>
+    <None Include="Resources\drawable-mdpi\baseline_delete_white_48.png">
+      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_48.png</Link>
+    </None>
+    <None Include="Resources\drawable-xhdpi\baseline_delete_white_18.png">
+      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_18.png</Link>
+    </None>
+    <None Include="Resources\drawable-xhdpi\baseline_delete_white_24.png">
+      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_24.png</Link>
+    </None>
+    <None Include="Resources\drawable-xhdpi\baseline_delete_white_36.png">
+      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_36.png</Link>
+    </None>
+    <None Include="Resources\drawable-xhdpi\baseline_delete_white_48.png">
+      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_48.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_18.png">
+      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_18.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_24.png">
+      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_24.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_36.png">
+      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_36.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_48.png">
+      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_48.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_18.png">
+      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_18.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_24.png">
+      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_24.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_36.png">
+      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_36.png</Link>
+    </None>
+    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_48.png">
+      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_48.png</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -83,13 +146,23 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\tick_icon.xml" />
+    <AndroidResource Include="Resources\drawable\delete_icon.xml" />
+    <AndroidResource Include="Resources\drawable\add_icon.xml" />
+    <AndroidResource Include="Resources\drawable\edit_icon.xml" />
+    <AndroidResource Include="Resources\drawable\filter_icon.xml" />
+    <AndroidResource Include="Resources\drawable\select_all_icon.xml" />
+    <AndroidResource Include="Resources\drawable\category_icon.xml" />
+    <AndroidResource Include="Resources\drawable\clear_icon.xml" />
+    <AndroidResource Include="Resources\drawable\date_icon.xml" />
+    <AndroidResource Include="Resources\drawable\money_icon.xml" />
+    <AndroidResource Include="Resources\drawable\text_icon.xml" />
+    <AndroidResource Include="Resources\drawable\time_icon.xml" />
+    <AndroidResource Include="Resources\drawable\balance_icon.xml" />
+    <AndroidResource Include="Resources\drawable\error_icon.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="Resources\drawable-hdpi\" />
-    <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="Resources\drawable-xxhdpi\" />
-    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MTracker\MTracker.csproj">

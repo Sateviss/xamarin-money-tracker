@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MTracker.Models;
+using MTracker.ViewModel;
 
 namespace MTracker.Views
 {
@@ -14,11 +15,16 @@ namespace MTracker.Views
     {
         public static Dictionary<int, NavigationPage> Pages = new Dictionary<int, NavigationPage>();
 
+        private ToolbarItem Add;
+
         public MainPage()
         {
             Master = new MenuPage();
-
+            Detail = new NavigationPage(new ChartPage());
             InitializeComponent();
+
+            Add = new ToolbarItem("", "add_icon.xml", async () => { await AddItem(); });
+            ToolbarItems.Add(Add);
         }
 
         public async Task NavigateToPage(int pageId)
@@ -47,6 +53,13 @@ namespace MTracker.Views
                     await Task.Delay(100);
 
             }
+        }
+
+        private async Task AddItem()
+        {
+            var newItem = await NewEntryViewModel.EditEntry(this.Detail, new Models.Entry());
+            if (newItem != null)
+                await App.EntryAccessor.AddAsync(newItem);
         }
     }
 }

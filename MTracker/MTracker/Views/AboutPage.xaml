@@ -5,10 +5,19 @@
    x:Class="MTracker.Views.AboutPage" 
    xmlns:vm="clr-namespace:MTracker.ViewModel"
    Title="About">
-   <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
     <StackLayout>
-        <Label/>
+        <Label
+        Text="[КОНОВАЛОВ СОСИ ХУЙ]"
+        FontSize="50"
+        FontAttributes="Bold"
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand"
+        HorizontalTextAlignment="Center"/>
+        <Label
+        Text="© Eugene Pisarchcik MMXVIII"
+        FontSize="20"
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand"
+        HorizontalTextAlignment="Center"/>
     </StackLayout>
 </ContentPage>

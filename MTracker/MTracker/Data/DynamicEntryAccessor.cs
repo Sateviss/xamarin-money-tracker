@@ -2,32 +2,84 @@
 using System.Collections.Generic;
 using System.IO;
 using MTracker.Models;
+using MTracker.ViewModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections;
 using SQLite;
+using System.Collections.Specialized;
 
 namespace MTracker.Data
 {
-    public class DynamicEntryAccessor : IEnumerable<Entry>
+    public class DynamicEntryAccessor : IEnumerable<Entry>, INotifyCollectionChanged
     {
+        protected const int rollover = 64;
+        protected int limit = rollover;
+        public List<Entry> bottomList;
+
+        private Entry _bottomEntry;
+
+        public Entry BottomEntry
+        { 
+            get
+            {
+                return _bottomEntry;
+            }
+            private set
+            {
+                _bottomEntry = value;
+                MaxedOut = _bottomEntry.Equals(bottomestEntry) ? true : false;
+            }
+        }
+
+        protected int  bottomEntryIndex = -1;
+        private Entry bottomestEntry;
+
+        public bool MaxedOut;
+
+        public void UpLimit(int value)
+        {
+            limit += value;
+            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
+                Database.QueryAsync<Entry>(
+                                           "SELECT * " +
+                                           "FROM [Entry] " +
+                                           "ORDER BY [Date] DESC , [ID] ASC " +
+                                           $"LIMIT {limit-value},{value}").Result));
+
+        }
+
         public class EntryEnum : IEnumerator<Entry>
         {
-            private const int rollover = 10;
 
-            private int offset = 0;
+            private DynamicEntryAccessor parent;
             private int index = -1;
 
-            private List<Entry> bufferList;
-            private SQLiteAsyncConnection database;
+            public Entry lastBuffered = null;
+            protected int offset = 0;
+            protected List<Entry> bufferList = new List<Entry>();
 
-            public EntryEnum(SQLiteAsyncConnection connection)
+            public void RefreshBuffer()
             {
-                database = connection;
-                bufferList = database.QueryAsync<Entry>("SELECT * " +
-                                                        "FROM [Entry] " +
-                                                        "ORDER BY [Date] DESC " +
-                                                        $"LIMIT {offset},{rollover}").Result;
+                bufferList = parent.Database.QueryAsync<Entry>(
+                                                               "SELECT * " +
+                                                               "FROM [Entry] " +
+                                                               "ORDER BY [Date] DESC , [ID] ASC " +
+                                                               $"LIMIT {offset},{(offset > parent.limit ? 0 : Math.Min(rollover, parent.limit - offset))}").Result;
+                if (bufferList.Count != 0)
+                    lastBuffered = bufferList.Count >= 1 ? bufferList.Last() : lastBuffered;
+                if (parent.bottomEntryIndex < index + bufferList.Count || (parent.BottomEntry == null && lastBuffered != null))
+                {
+                    parent.bottomList = bufferList;
+                    parent.BottomEntry = lastBuffered;
+                    parent.bottomEntryIndex = index;
+                }
+            }
+
+            public EntryEnum(DynamicEntryAccessor papa)
+            {
+                parent = papa;
+                RefreshBuffer();
             }
 
             public void Reset()
@@ -50,8 +102,11 @@ namespace MTracker.Data
             {
                 if (!this.disposedValue)
                 {
-                    bufferList = null;
-                    database = null;
+                    if (disposing)
+                    {
+                        bufferList = null;
+                    }
+                    lastBuffered = null;
                 }
                 this.disposedValue = true;
             }
@@ -63,17 +118,27 @@ namespace MTracker.Data
                 {
                     index = 0;
                     offset += rollover;
-
-                    bufferList = database.QueryAsync<Entry>("SELECT * " +
-                                                            "FROM [Entry] " +
-                                                            "ORDER BY [Date] DESC " +
-                                                            $"LIMIT {offset},{rollover}").Result;
+                    RefreshBuffer();
+                    System.Diagnostics.Debug.WriteLine($"Paginated {bufferList.Count}");
                 }
+
                 return index < bufferList.Count;
             }
         }
 
         private SQLiteAsyncConnection database;
+
+        public DynamicEntryAccessor()
+        {
+            var res = Database.QueryAsync<Entry>(
+                                                 "SELECT * " +
+                                                 "FROM [Entry] " +
+                                                 "ORDER BY [Date] ASC , [ID] DESC " +
+                                                 $"LIMIT 1").Result;
+            bottomestEntry = res.Count == 0 ? null : res[0];
+        }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         private void openDatabase(string dbPath)
         {
@@ -92,10 +157,9 @@ namespace MTracker.Data
             }
         }
 
-
         public IEnumerator<Entry> GetEnumerator()
         {
-            return new EntryEnum(Database);
+            return new EntryEnum(this);
         }
 
         private IEnumerator GetEnumerator1()
@@ -106,6 +170,34 @@ namespace MTracker.Data
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator1();
+        }
+
+        public async Task RemoveAsync(Entry entry)
+        {
+            await Database.DeleteAsync(entry);
+            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, entry));
+        }
+
+        public async Task AddAsync(Entry entry)
+        {
+            if (entry.ID != 0)
+                await Database.UpdateAsync(entry);
+            else
+                await Database.InsertAsync(entry);
+
+            var res = await Database.QueryAsync<Entry>(
+                                                 "SELECT * " +
+                                                 "FROM [Entry] " +
+                                                 "ORDER BY [Date] ASC , [ID] DESC " +
+                                                 $"LIMIT 1");
+            bottomestEntry = res.Count == 0 ? null : res[0];
+
+            CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, entry));
+        }
+
+        public void Add(Entry entry)
+        {
+            AddAsync(entry).Wait();
         }
     }
 }
