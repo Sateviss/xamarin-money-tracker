@@ -8,17 +8,19 @@ namespace MTracker.Models
 {
     public class Entry : INotifyPropertyChanged
     {
+
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; } = 0;
 
         public DateTime Date { get; set; } = DateTime.Now;
 
         public string Name { get; set; }
-        public float Amount { get; set; } = 0f;
+        public float Amount { get; set; } = ValueNull;
         public string Currency { get; set; }
         public int CategoryID { get; set; } = -1;
 
         #region Ignore
+        public const float ValueNull = -0.80085135f;
         public float Rotation => Selected ? 360 : 180;
         public string Icon => Selected ? "tick_icon.xml" : null;
 
@@ -40,7 +42,7 @@ namespace MTracker.Models
                    ID == entry.ID &&
                    Date == entry.Date &&
                    Name == entry.Name &&
-                   Amount == entry.Amount &&
+                   Math.Abs(Amount - entry.Amount) < 0.00001f &&
                    Currency == entry.Currency &&
                    CategoryID == entry.CategoryID;
         }

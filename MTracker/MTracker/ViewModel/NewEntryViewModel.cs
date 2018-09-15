@@ -55,8 +55,12 @@ namespace MTracker.ViewModel
 
         public string Amount
         {
-            get => Math.Abs(Entry.Amount) < 0.001f ? null : Entry.Amount.ToString();
-            set => Entry.Amount = float.Parse(value);
+            get => Math.Abs(Entry.Amount-Models.Entry.ValueNull) < 0.0000001f ? null : Entry.Amount.ToString();
+            set
+            {
+                var ok = float.TryParse(value, out float res);
+                Entry.Amount = ok?res:Models.Entry.ValueNull;
+            }
         }
 
         //public event Action OnCategoryError;
