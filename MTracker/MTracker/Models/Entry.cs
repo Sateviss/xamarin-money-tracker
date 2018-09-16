@@ -20,11 +20,36 @@ namespace MTracker.Models
         public int CategoryID { get; set; } = -1;
 
         #region Ignore
+
         public const float ValueNull = -0.80085135f;
+        public const int CutLength = 16;
+
+        public string AmountString 
+        {
+            get
+            {
+                int log1000 = (int)Math.Floor(Math.Log10(Amount)/3);
+                var powers = new List<string> {"", "K", "M", "G", "T", "P", "E", "Z" };
+                var ret = log1000>0?
+                    string.Format("{0:F0}{1} BYN", Amount / (Math.Pow(10, 3*log1000)), powers[log1000]) :
+                    string.Format("{0:F2} BYN", Amount);
+                return ret;
+            }
+        }
+
+        public string NameShort 
+        {
+            get
+            {
+                return Name.Length <= CutLength ? Name : Name.Substring(0, CutLength) + "…";
+            }
+        }
+
         public float Rotation => Selected ? 360 : 180;
         public string Icon => Selected ? "tick_icon.xml" : null;
 
-        public bool Selected { get => selected; 
+        public bool Selected 
+        { get => selected; 
             set
             {
                 selected = value;

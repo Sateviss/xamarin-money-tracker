@@ -47,7 +47,7 @@
                                     FontSize="16"
                                     VerticalOptions="FillAndExpand"
                                     VerticalTextAlignment="End"
-                                    Text="{Binding .Name}"/>
+                                    Text="{Binding .NameShort}"/>
                                 <Label
                                     FontSize="12"
                                     VerticalOptions="FillAndExpand"
@@ -60,7 +60,8 @@
                                     <Label
                                         Margin="16"
                                         HorizontalTextAlignment="End"
-                                        Text="{Binding .Amount, StringFormat='{0:F2} BYN'}"
+                                        VerticalTextAlignment="Center"
+                                        Text="{Binding .AmountString}"
                                         FontSize="24"/>
                                 </Grid>
                             </StackLayout>
