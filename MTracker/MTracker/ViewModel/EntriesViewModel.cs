@@ -33,7 +33,7 @@ namespace MTracker.ViewModel
             SelectedEntries = new List<Models.Entry>();
             Entries = App.EntryAccessor;
 
-            DeleteItem = new ToolbarItem("", "delete_icon.xml", DeleteSelected);
+            DeleteItem = new ToolbarItem("", "delete_icon.xml", async () => { await DeleteSelected(); });
             EditItem = new ToolbarItem("", "edit_icon.xml", async () => { await EditSelected(); });
 
         }
@@ -86,8 +86,15 @@ namespace MTracker.ViewModel
             OnPropertyChanged("ToolbarItems");
         }
 
-        private void DeleteSelected()
+        private async Task DeleteSelected()
         {
+            var dialog = await contentPage.DisplayAlert(
+                "",
+                $"Are you sure you want to delete {(SelectedEntries.Count==1?"this entry":$"these {SelectedEntries.Count} entries")}?",
+                "Yes",
+                "No");
+            if (dialog == false)
+                return;
             SelectedEntries.ForEach((obj) => obj.Selected = false);
             SelectedEntries.ForEach(async (obj) => await Entries.RemoveAsync(obj));
             SelectedEntries.Clear();
