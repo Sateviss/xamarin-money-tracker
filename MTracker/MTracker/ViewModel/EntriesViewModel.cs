@@ -20,6 +20,9 @@ namespace MTracker.ViewModel
         public bool DeleteVisible => SelectedEntries.Count != 0;
         public ToolbarItem DeleteItem;
 
+        public bool EditVisible => SelectedEntries.Count == 1;
+        public ToolbarItem EditItem;
+
         const int rotationTime = 250;
 
         public EntriesViewModel(ContentPage page)
@@ -31,6 +34,7 @@ namespace MTracker.ViewModel
             Entries = App.EntryAccessor;
 
             DeleteItem = new ToolbarItem("", "delete_icon.xml", DeleteSelected);
+            EditItem = new ToolbarItem("", "edit_icon.xml", async () => { await EditSelected(); });
 
         }
 
@@ -58,25 +62,27 @@ namespace MTracker.ViewModel
             else
                 SelectedEntries.Add(entry);
 
-            CheckDeleteToolbar();
-
-            System.Diagnostics.Debug.WriteLine("".PadLeft(20, '#'));
-            foreach (var item in SelectedEntries)
-            {
-                System.Diagnostics.Debug.WriteLine(item.ID);
-            }
+            CheckToolbar();
         }
 
-        private void CheckDeleteToolbar()
+        private void CheckToolbar()
         {
             if (DeleteVisible)
             {
-                if (contentPage.ToolbarItems.Contains(DeleteItem))
-                    return;
-                ToolbarItems.Add(DeleteItem);
+                if (!contentPage.ToolbarItems.Contains(DeleteItem))
+                    ToolbarItems.Add(DeleteItem);
             }
             else
                 ToolbarItems.Remove(DeleteItem);
+
+            if (EditVisible)
+            {
+                if (!contentPage.ToolbarItems.Contains(EditItem))
+                    ToolbarItems.Add(EditItem);
+            }
+            else
+                ToolbarItems.Remove(EditItem);
+                
             OnPropertyChanged("ToolbarItems");
         }
 
@@ -86,7 +92,14 @@ namespace MTracker.ViewModel
             SelectedEntries.ForEach(async (obj) => await Entries.RemoveAsync(obj));
             SelectedEntries.Clear();
             OnPropertyChanged("Entries");
-            CheckDeleteToolbar();
+            CheckToolbar();
+        }
+
+        private async Task EditSelected()
+        {
+            var newItem = await NewEntryViewModel.EditEntry(contentPage, SelectedEntries[0]);
+            if (newItem != null)
+                await App.EntryAccessor.AddAsync(newItem);
         }
     }
 }

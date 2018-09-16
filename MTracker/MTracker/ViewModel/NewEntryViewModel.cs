@@ -14,7 +14,7 @@ namespace MTracker.ViewModel
         public TaskCompletionSource<Models.Entry> taskCompletion;
 
         private TimeSpan time;
-        public TimeSpan Time 
+        public TimeSpan Time
         {
             get
             {
@@ -55,11 +55,11 @@ namespace MTracker.ViewModel
 
         public string Amount
         {
-            get => Math.Abs(Entry.Amount-Models.Entry.ValueNull) < 0.0000001f ? null : Entry.Amount.ToString();
+            get => Math.Abs(Entry.Amount - Models.Entry.ValueNull) < 0.0000001f ? null : Entry.Amount.ToString();
             set
             {
                 var ok = float.TryParse(value, out float res);
-                Entry.Amount = ok?res:Models.Entry.ValueNull;
+                Entry.Amount = ok ? res : Models.Entry.ValueNull;
             }
         }
 
@@ -75,7 +75,7 @@ namespace MTracker.ViewModel
             //    allClear = false;
             //    OnCategoryError();
             //}
-            if (EntryTitle == "" || EntryTitle == null)
+            if (string.IsNullOrEmpty(EntryTitle))
             {
                 allClear = false;
                 OnTitleError();
@@ -97,7 +97,7 @@ namespace MTracker.ViewModel
 
         public NewEntryViewModel(Models.Entry myEntry)
         {
-            Title = "New entry";
+            Title = myEntry.ID == 0?"New entry":"Editing entry";
             Entry = myEntry;
             date = Entry.Date;
             time = Entry.Date.TimeOfDay;
