@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MTracker.Views.EntriesPage"
     xmlns:vm="clr-namespace:MTracker.ViewModel"
-    xmlns:local="clr-namespace:MTracke.Views;assembly=MTracker.Views"
+    xmlns:local="clr-namespace:MTracker.Views;assembly=MTracker.Views"
     Title="Entries">
     <ContentPage.Content>
         <ListView
