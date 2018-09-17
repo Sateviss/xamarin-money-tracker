@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Threading.Tasks;
 using MTracker.Models;
@@ -12,6 +13,7 @@ namespace MTracker.ViewModel
         public Models.Entry Entry;
 
         public TaskCompletionSource<Models.Entry> taskCompletion;
+        public ObservableCollection<Category> Categories = App.CategoryAccessor.ObservableList;
 
         private TimeSpan time;
         public TimeSpan Time
@@ -53,6 +55,8 @@ namespace MTracker.ViewModel
             set => Entry.CategoryID = value;
         }
 
+        public string SelectedCategory => CategoryID == -1 ? "" : App.CategoryAccessor.GetByID(CategoryID).Name;
+
         public string Amount
         {
             get => Math.Abs(Entry.Amount - Models.Entry.ValueNull) < 0.0000001f ? null : Entry.Amount.ToString();
@@ -63,18 +67,18 @@ namespace MTracker.ViewModel
             }
         }
 
-        //public event Action OnCategoryError;
+        public event Action OnCategoryError;
         public event Action OnTitleError;
         public event Action OnAmountError;
 
         public void Accept()
         {
             bool allClear = true;
-            //if (CategoryID == -1)
-            //{
-            //    allClear = false;
-            //    OnCategoryError();
-            //}
+            if (CategoryID == -1)
+            {
+                allClear = false;
+                OnCategoryError();
+            }
             if (string.IsNullOrEmpty(EntryTitle))
             {
                 allClear = false;

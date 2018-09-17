@@ -29,13 +29,20 @@
                                     WidthRequest="40"
                                     HeightRequest="40"
                                     BindingContext="{Binding .}">
-                                    <Button
-                                        x:Name="TemplateButton"
-                                        Command="{Binding ClickCommand}"
-                                        BindingContext="{Binding Source={x:Reference EntriesList}, Path=BindingContext}"
-                                        CommandParameter="{x:Reference ItemGrid}"
-                                        CornerRadius="20"
-                                        BackgroundColor="{Binding .Color}"/>
+                                    <Frame
+                                        BackgroundColor="{Binding .Color}"
+                                        Padding="0"
+                                        HeightRequest="40"
+                                        WidthRequest="40"
+                                        CornerRadius="20">
+                                        <Button
+                                            Margin="0"
+                                            BackgroundColor="Transparent"
+                                            x:Name="TemplateButton"
+                                            Command="{Binding ClickCommand}"
+                                            BindingContext="{Binding Source={x:Reference EntriesList}, Path=BindingContext}"
+                                            CommandParameter="{x:Reference ItemGrid}"/>
+                                    </Frame>
                                     <Image
                                         Source="{Binding .Icon}"/>
                                         

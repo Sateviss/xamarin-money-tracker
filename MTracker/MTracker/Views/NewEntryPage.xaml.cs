@@ -20,13 +20,14 @@ namespace MTracker.Views
 
             viewModel = new NewEntryViewModel(entry);
             BindingContext = viewModel;
+            CategoryPicker.ItemsSource = viewModel.Categories;
 
             CancelButton.Clicked += (sender, e) => viewModel.Cancel();
             AcceptButton.Clicked += (sender, e) => viewModel.Accept();
             TitleEntry.IsTextPredictionEnabled = true;
 
             viewModel.OnTitleError += () => { ErrorTitle.FadeTo(1); };
-            //viewModel.OnCategoryError += () => { ErrorPicker.FadeTo(1); };
+            viewModel.OnCategoryError += () => { ErrorPicker.FadeTo(1); };
             viewModel.OnAmountError += () => { ErrorValue.FadeTo(1); };
 
             CategoryPicker.SelectedIndexChanged += (sender, e) => { ErrorPicker.FadeTo(0); };

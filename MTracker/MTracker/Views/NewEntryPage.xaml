@@ -21,6 +21,8 @@
                         <Picker 
                             Title="Category"
                             SelectedIndex="{Binding CategoryID}"
+                            ItemDisplayBinding="{Binding .Name}"
+                            SelectedItem="{Binding SelectedCategory}"
                             HorizontalOptions="FillAndExpand"
                             x:Name="CategoryPicker"/>
                         <Image

@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using MTracker.Models;
 using SQLite;
+using System.Linq;
 
 namespace MTracker.Data
 {
@@ -110,12 +111,6 @@ namespace MTracker.Data
             AddAsync(category).Wait();
         }
 
-        public async Task<Category> GetByIDAsync(int ID)
-        {
-            var res = await Database.QueryAsync<Category>($"SELECT * FROM TABLE [Category] WHERE ID={ID}");
-            return res.Count == 0 ? null : res[0];
-        }
-
-        public Category GetByID(int ID) => GetByIDAsync(ID).Result;
+        public Category GetByID(int ID) => ObservableList.FirstOrDefault((obj) => obj.ID == ID);
     }
 }

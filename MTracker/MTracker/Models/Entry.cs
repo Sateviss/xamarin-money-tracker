@@ -37,7 +37,15 @@ namespace MTracker.Models
             }
         }
 
-        public string Color => App.CategoryAccessor.GetByID(CategoryID)?.Color;
+        public string Color 
+        {
+            get
+            {
+                var category = App.CategoryAccessor.GetByID(CategoryID);
+                return category == null ? "#888888" : category.Color;
+
+            }
+        }
 
         public string NameShort 
         {
