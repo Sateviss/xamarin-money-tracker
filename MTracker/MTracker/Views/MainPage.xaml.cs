@@ -42,6 +42,9 @@ namespace MTracker.Views
                     case MenuItemType.Entries:
                         Pages.Add(pageId, new NavigationPage(new EntriesPage()));
                         break;
+                    case MenuItemType.Categories:
+                        Pages.Add(pageId, new NavigationPage(new CategoriesPage()));
+                        break;
                 }
             }
 
