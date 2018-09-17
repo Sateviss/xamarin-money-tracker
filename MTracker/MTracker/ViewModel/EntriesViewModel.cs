@@ -5,6 +5,7 @@ using MTracker.Views;
 using MTracker.Data;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Threading;
 
 namespace MTracker.ViewModel
 {
@@ -47,22 +48,23 @@ namespace MTracker.ViewModel
             }
         }
 
-        public Command ClickCommand => new Command(ClickEntry);
+        public Command ClickCommand => new Command(async (o) => { await ClickEntry(o); });
 
-        public void ClickEntry(object o)
+        public async Task ClickEntry(object o)
         {
             var grid = o as Grid;
             var entry = grid.BindingContext as Models.Entry;
-            grid.RotateYTo(180 - entry.Rotation, rotationTime);
-
+            var rotationTask = grid.RotateYTo(180 - entry.Rotation, rotationTime);
+            await Task.Delay(rotationTime / 2);
             entry.Selected = !entry.Selected;
 
             if (SelectedEntries.Contains(entry))
                 SelectedEntries.Remove(entry);
             else
                 SelectedEntries.Add(entry);
-
             CheckToolbar();
+
+            await rotationTask;
         }
 
         private void CheckToolbar()

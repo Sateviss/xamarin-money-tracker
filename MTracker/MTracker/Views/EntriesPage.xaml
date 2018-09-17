@@ -29,9 +29,6 @@
                                     WidthRequest="40"
                                     HeightRequest="40"
                                     BindingContext="{Binding .}">
-                                    <Image
-                                      Opacity="{Binding .IconOpacity}"
-                                      Source="tick_icon.xml"/>
                                     <StackLayout>
                                         <Frame
                                             BackgroundColor="{Binding .Color}"
