@@ -44,9 +44,10 @@
                                             CommandParameter="{x:Reference ItemGrid}"/>
                                     </Frame>
                                     <Image
-                                        Source="{Binding .Icon}"/>
-                                        
-                                </Grid>
+                                      Opacity="{Binding .IconOpacity}"
+                                      Source="tick_icon.xml"/>
+                                </Grid>      
+
                             <StackLayout
                                 VerticalOptions="FillAndExpand"
                                 Orientation="Vertical">
@@ -61,17 +62,18 @@
                                     VerticalTextAlignment="Start"
                                     Text="{Binding .Date, StringFormat='{0:dd.MM.yyyy HH:mm}'}"/>
                             </StackLayout>
-                                <Grid
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="CenterAndExpand">
-                                    <Label
-                                        Margin="16"
-                                        HorizontalTextAlignment="End"
-                                        VerticalTextAlignment="Center"
-                                        Text="{Binding .AmountString}"
-                                        FontSize="24"/>
-                                </Grid>
-                            </StackLayout>
+                            
+                            <Grid
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="CenterAndExpand">
+                                <Label
+                                    Margin="16"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    Text="{Binding .AmountString}"
+                                    FontSize="24"/>
+                            </Grid>
+                            
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
