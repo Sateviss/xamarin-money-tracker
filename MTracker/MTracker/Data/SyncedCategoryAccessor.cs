@@ -109,5 +109,13 @@ namespace MTracker.Data
         {
             AddAsync(category).Wait();
         }
+
+        public async Task<Category> GetByIDAsync(int ID)
+        {
+            var res = await Database.QueryAsync<Category>($"SELECT * FROM TABLE [Category] WHERE ID={ID}");
+            return res.Count == 0 ? null : res[0];
+        }
+
+        public Category GetByID(int ID) => GetByIDAsync(ID).Result;
     }
 }

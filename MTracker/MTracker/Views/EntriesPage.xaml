@@ -35,7 +35,7 @@
                                         BindingContext="{Binding Source={x:Reference EntriesList}, Path=BindingContext}"
                                         CommandParameter="{x:Reference ItemGrid}"
                                         CornerRadius="20"
-                                        BackgroundColor="Red"/>
+                                        BackgroundColor="{Binding .Color}"/>
                                     <Image
                                         Source="{Binding .Icon}"/>
                                         
