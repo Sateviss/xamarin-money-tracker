@@ -25,6 +25,7 @@ namespace MTracker.Views
             Items = new List<MenuItem>{
                 new MenuItem {ID = (int)MenuItemType.Charts, Title = "Charts"},
                 new MenuItem {ID = (int)MenuItemType.Entries, Title = "Entries"},
+                new MenuItem {ID = (int)MenuItemType.Categories, Title = "Categories"},
                 new MenuItem {ID = (int)MenuItemType.About, Title = "About"}
             };
 

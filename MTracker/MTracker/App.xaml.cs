@@ -9,11 +9,13 @@ namespace MTracker
     public partial class App : Application
     {
         public static DynamicEntryAccessor EntryAccessor;
+        public static SyncedCategoryAccessor CategoryAccessor;
 
         public App()
         {
             InitializeComponent();
             EntryAccessor = new DynamicEntryAccessor();
+            CategoryAccessor = new SyncedCategoryAccessor();
             EntryAccessor.CollectionChanged += (sender, e) => { System.Diagnostics.Debug.WriteLine("CollectionChanged"); };
             MainPage = new MainPage();
         }

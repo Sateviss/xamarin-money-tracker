@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MTracker.Views.CategoriesPage"
+    xmlns:vm="clr-namespace:MTracker.ViewModel"
+    xmlns:local="clr-namespace:MTracker.Views;assembly=MTracker.Views"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <ListView
+            SelectionMode="None"
+            x:Name="CategoriesList"
+            RowHeight="56"
+            IsPullToRefreshEnabled="false"
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            x:Name="Item"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Padding="0">
+                            
+                            <Frame
+                                x:Name="TemplateButton"
+                                CornerRadius="40"
+                                HeightRequest="40"
+                                Padding="0"
+                                WidthRequest="40"
+                                Margin="8 16 8 16"
+                                BackgroundColor="{Binding .Color}"/>
+                            <Label
+                                Margin="0"
+                                FontSize="16"
+                                VerticalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                Text="{Binding .Name}"/>
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
