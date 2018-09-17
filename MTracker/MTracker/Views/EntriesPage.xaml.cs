@@ -28,7 +28,9 @@ namespace MTracker.Views
                     vm.ToolbarItems.ForEach((obj) => { ToolbarItems.Add(obj); });
                 }
             };
-            EntriesList.ItemAppearing += (sender, e) => { vm.LoadMore((Models.Entry)e.Item); };
+            EntriesList.ItemAppearing += (sender, e) => {
+                vm.LoadMore((Models.Entry)e.Item); 
+            };
         }
     }
 }

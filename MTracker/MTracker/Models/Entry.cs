@@ -43,7 +43,6 @@ namespace MTracker.Models
             {
                 var category = App.CategoryAccessor.GetByID(CategoryID);
                 return category == null ? "#888888" : category.Color;
-
             }
         }
 
