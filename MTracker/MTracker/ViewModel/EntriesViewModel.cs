@@ -53,10 +53,10 @@ namespace MTracker.ViewModel
         {
             var grid = o as Grid;
             var entry = grid.BindingContext as Models.Entry;
-
-            grid.RotateYTo(180-entry.Rotation, rotationTime);
+            grid.RotateYTo(180 - entry.Rotation, rotationTime);
 
             entry.Selected = !entry.Selected;
+
             if (SelectedEntries.Contains(entry))
                 SelectedEntries.Remove(entry);
             else
