@@ -18,57 +18,56 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout x:Name="Item">
+                        <StackLayout
+                            x:Name="Item"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal">
+                            
+                            <Grid
+                                x:Name="ItemGrid"
+                                RotationY="{Binding Rotation}"
+                                Margin="16"
+                                WidthRequest="40"
+                                HeightRequest="40"
+                                BindingContext="{Binding .}">
+                                <Button
+                                    x:Name="TemplateButton"
+                                    Command="{Binding ClickCommand}"
+                                    BindingContext="{Binding Source={x:Reference EntriesList}, Path=BindingContext}"
+                                    CommandParameter="{x:Reference ItemGrid}"
+                                    CornerRadius="20"
+                                    BackgroundColor="Red"/>
+                                <Image
+                                    Opacity="{Binding .IconOpacity}"
+                                    Source="tick_icon.xml"/>
+                            </Grid>
+                            
                             <StackLayout
-                                HorizontalOptions="FillAndExpand"
-                                Orientation="Horizontal">
-                                
-                                <Grid
-                                    x:Name="ItemGrid"
-                                    RotationY="{Binding Rotation}"
-                                    Margin="16"
-                                    WidthRequest="40"
-                                    HeightRequest="40"
-                                    BindingContext="{Binding .}">
-                                    <Button
-                                        x:Name="TemplateButton"
-                                        Command="{Binding ClickCommand}"
-                                        BindingContext="{Binding Source={x:Reference EntriesList}, Path=BindingContext}"
-                                        CommandParameter="{x:Reference ItemGrid}"
-                                        CornerRadius="20"
-                                        BackgroundColor="Red"/>
-                                    <Image
-                                        Opacity="{Binding .IconOpacity}"
-                                        Source="tick_icon.xml"/>
-                                </Grid>
-                                
-                                <StackLayout
+                                VerticalOptions="FillAndExpand"
+                                Orientation="Vertical">
+                                <Label
+                                    FontSize="16"
                                     VerticalOptions="FillAndExpand"
-                                    Orientation="Vertical">
-                                    <Label
-                                        FontSize="16"
-                                        VerticalOptions="FillAndExpand"
-                                        VerticalTextAlignment="End"
-                                        Text="{Binding .NameShort}"/>
-                                    <Label
-                                        FontSize="12"
-                                        VerticalOptions="FillAndExpand"
-                                        VerticalTextAlignment="Start"
-                                        Text="{Binding .Date, StringFormat='{0:dd.MM.yyyy HH:mm}'}"/>
-                                </StackLayout>
-                                
-                                <Grid
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="CenterAndExpand">
-                                    <Label
-                                        Margin="16"
-                                        HorizontalTextAlignment="End"
-                                        VerticalTextAlignment="Center"
-                                        Text="{Binding .AmountString}"
-                                        FontSize="24"/>
-                                </Grid>
-                                
+                                    VerticalTextAlignment="End"
+                                    Text="{Binding .NameShort}"/>
+                                <Label
+                                    FontSize="12"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Start"
+                                    Text="{Binding .Date, StringFormat='{0:dd.MM.yyyy HH:mm}'}"/>
                             </StackLayout>
+                            
+                            <Grid
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="CenterAndExpand">
+                                <Label
+                                    Margin="16"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    Text="{Binding .AmountString}"
+                                    FontSize="24"/>
+                            </Grid>
+                            
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
