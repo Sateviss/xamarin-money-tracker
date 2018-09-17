@@ -46,7 +46,7 @@ namespace MTracker.Models
         }
 
         public float Rotation => Selected ? 360 : 180;
-        public string Icon => Selected ? "tick_icon.xml" : null;
+        public float IconOpacity => Selected?1:0;
 
         public bool Selected 
         { get => selected; 
@@ -55,7 +55,7 @@ namespace MTracker.Models
                 selected = value;
                 OnPropertyChanged("Rotation");
                 OnPropertyChanged("Selected");
-                OnPropertyChanged("Icon");
+                OnPropertyChanged("IconOpacity");
             }
         }
 

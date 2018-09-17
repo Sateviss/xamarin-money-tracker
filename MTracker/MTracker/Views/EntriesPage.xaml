@@ -22,6 +22,7 @@
                             <StackLayout
                                 HorizontalOptions="FillAndExpand"
                                 Orientation="Horizontal">
+                                
                                 <Grid
                                     x:Name="ItemGrid"
                                     RotationY="{Binding Rotation}"
@@ -37,23 +38,25 @@
                                         CornerRadius="20"
                                         BackgroundColor="Red"/>
                                     <Image
-                                        Source="{Binding .Icon}"/>
-                                        
+                                        Opacity="{Binding .IconOpacity}"
+                                        Source="tick_icon.xml"/>
                                 </Grid>
-                            <StackLayout
-                                VerticalOptions="FillAndExpand"
-                                Orientation="Vertical">
-                                <Label
-                                    FontSize="16"
+                                
+                                <StackLayout
                                     VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="End"
-                                    Text="{Binding .NameShort}"/>
-                                <Label
-                                    FontSize="12"
-                                    VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="Start"
-                                    Text="{Binding .Date, StringFormat='{0:dd.MM.yyyy HH:mm}'}"/>
-                            </StackLayout>
+                                    Orientation="Vertical">
+                                    <Label
+                                        FontSize="16"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="End"
+                                        Text="{Binding .NameShort}"/>
+                                    <Label
+                                        FontSize="12"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="Start"
+                                        Text="{Binding .Date, StringFormat='{0:dd.MM.yyyy HH:mm}'}"/>
+                                </StackLayout>
+                                
                                 <Grid
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="CenterAndExpand">
@@ -64,6 +67,7 @@
                                         Text="{Binding .AmountString}"
                                         FontSize="24"/>
                                 </Grid>
+                                
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
