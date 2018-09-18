@@ -111,6 +111,6 @@ namespace MTracker.Data
             AddAsync(category).Wait();
         }
 
-        public Category GetByID(int ID) => ObservableList.FirstOrDefault((obj) => obj.ID == ID);
+        public Category GetByID(int ID) => ObservableList.FirstOrDefault((obj) => obj.ID == ID+1);
     }
 }

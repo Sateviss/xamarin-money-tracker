@@ -20,8 +20,7 @@
                         Padding="0">
                         <Picker 
                             Title="Category"
-                            SelectedIndex="{Binding CategoryID}"
-                            ItemDisplayBinding="{Binding .Name}"
+                            ItemDisplayBinding="{Binding Name}"
                             SelectedItem="{Binding SelectedCategory}"
                             HorizontalOptions="FillAndExpand"
                             x:Name="CategoryPicker"/>

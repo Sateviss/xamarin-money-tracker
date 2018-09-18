@@ -25,7 +25,7 @@ namespace MTracker.ViewModel
             set
             {
                 time = value;
-                Entry.Date = Entry.Date + time;
+                Entry.Date = Entry.Date.Date + time;
             }
         }
 
@@ -55,7 +55,11 @@ namespace MTracker.ViewModel
             set => Entry.CategoryID = value;
         }
 
-        public string SelectedCategory => CategoryID == -1 ? "" : App.CategoryAccessor.GetByID(CategoryID).Name;
+        public Category SelectedCategory
+        {
+            get => CategoryID == -1 ? null : App.CategoryAccessor.GetByID(CategoryID);
+            set => CategoryID = value != null? value.ID-1:-1;
+        }
 
         public string Amount
         {
@@ -103,7 +107,7 @@ namespace MTracker.ViewModel
         {
             Title = myEntry.ID == 0?"New entry":"Editing entry";
             Entry = myEntry;
-            date = Entry.Date;
+            date = Entry.Date.Date;
             time = Entry.Date.TimeOfDay;
             taskCompletion = new TaskCompletionSource<Models.Entry>();
         }

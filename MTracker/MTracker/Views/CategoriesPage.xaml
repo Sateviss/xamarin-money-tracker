@@ -8,7 +8,7 @@
     Title="{Binding Title}">
     <ContentPage.Content>
         <ListView
-            SelectionMode="None"
+            SelectionMode="Single"
             x:Name="CategoriesList"
             RowHeight="56"
             IsPullToRefreshEnabled="false"

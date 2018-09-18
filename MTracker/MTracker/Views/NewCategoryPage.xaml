@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MTracker.Views.NewCategoryPage"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout
+            Spacing="16"
+            Margin="16"
+            VerticalOptions="FillAndExpand">
+            
+            <Frame
+                BackgroundColor="{Binding Color}">
+                <StackLayout>
+                    
+                    <Label
+                        Text="Color"
+                        FontSize="20"
+                        TextColor="{Binding InvertedColor}"/>
+                    
+                    <StackLayout
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="{Binding InvertedColor}"
+                            Margin="0"
+                            FontSize="16"
+                            Text="Red"
+                            WidthRequest="50"
+                            HorizontalTextAlignment="End"/>
+                        <Slider
+                            Value="{Binding ColorR}"
+                            ThumbColor="{Binding InvertedColor}"
+                            MaximumTrackColor="{Binding InvertedColor}"
+                            MinimumTrackColor="{Binding InvertedColor}"
+                            Minimum="0"
+                            Maximum="255"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="{Binding InvertedColor}"
+                            Margin="0"
+                            FontSize="16"
+                            Text="Green"
+                            WidthRequest="50"
+                            HorizontalTextAlignment="End"/>
+                        <Slider
+                            Value="{Binding ColorG}"
+                            ThumbColor="{Binding InvertedColor}"
+                            MaximumTrackColor="{Binding InvertedColor}"
+                            MinimumTrackColor="{Binding InvertedColor}"
+                            Minimum="0"
+                            Maximum="255"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal">
+                        <Label
+                            TextColor="{Binding InvertedColor}"
+                            Margin="0"
+                            FontSize="16"
+                            Text="Blue"
+                            WidthRequest="50"
+                            HorizontalTextAlignment="End"/>
+                        <Slider
+                            Value="{Binding ColorB}"
+                            ThumbColor="{Binding InvertedColor}"
+                            MaximumTrackColor="{Binding InvertedColor}"
+                            MinimumTrackColor="{Binding InvertedColor}"
+                            Minimum="0"
+                            Maximum="255"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </Frame> 
+            
+            <Grid>
+                <Entry
+                    x:Name="NameEntry"
+                    Text="{Binding Name}"
+                    Placeholder="Name"
+                    HorizontalOptions="FillAndExpand"/>
+                <Image
+                    Margin="8"
+                    x:Name="ErrorName"
+                    Source="error_icon.xml"
+                    HorizontalOptions="End"
+                    Opacity="0"/>
+            </Grid>
+            
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="CancelButton"
+                    Text="Cancel"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button
+                    x:Name="AcceptButton"
+                    Text="Accept"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

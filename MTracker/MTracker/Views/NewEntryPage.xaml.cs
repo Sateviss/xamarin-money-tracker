@@ -16,10 +16,11 @@ namespace MTracker.Views
 
         public NewEntryPage(Models.Entry entry)
         {
-            InitializeComponent();
-
             viewModel = new NewEntryViewModel(entry);
             BindingContext = viewModel;
+
+            InitializeComponent();
+
             CategoryPicker.ItemsSource = viewModel.Categories;
 
             CancelButton.Clicked += (sender, e) => viewModel.Cancel();
