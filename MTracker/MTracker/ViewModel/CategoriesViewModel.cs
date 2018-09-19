@@ -33,7 +33,11 @@ namespace MTracker.ViewModel
             var i = Categories.IndexOf(category);
             var res = await NewCategoryViewModel.EditCategory(page, category);
             if (res != null)
+            {
                 Categories[i] = res;
+                await Task.Delay(2000);
+            }
+            OnPropertyChanged("Categories");
         }
     }
 }
