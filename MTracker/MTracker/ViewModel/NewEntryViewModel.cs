@@ -84,7 +84,7 @@ namespace MTracker.ViewModel
                 allClear = false;
                 OnTitleError();
             }
-            if (Amount == null)
+            if (Amount == null || Entry.Amount > 999e21)
             {
                 allClear = false;
                 OnAmountError();
