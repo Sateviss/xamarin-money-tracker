@@ -77,22 +77,6 @@ namespace MTracker.Data
             return;
         }
 
-        //private void openDatabase(string dbPath)
-        //{
-        //    database = new SQLiteAsyncConnection(dbPath);
-        //    database.CreateTableAsync<T>().Wait();
-        //}
-
-        //public SQLiteAsyncConnection Database
-        //{
-        //    get
-        //    {
-        //        if (database == null)
-        //            openDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Database.db3"));
-        //        return database;
-        //    }
-        //}
-
         public async Task RemoveAsync(Category category)
         {
             await Database.DeleteAsync(category);
