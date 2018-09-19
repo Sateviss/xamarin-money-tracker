@@ -40,7 +40,6 @@ namespace MTracker.Data
             {
                 ObservableList.Add(item);
             }
-
             ObservableList.CollectionChanged += async (sender, e) => await Changed(sender, e);
         }
 

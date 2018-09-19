@@ -12,7 +12,6 @@
             x:Name="CategoriesList"
             RowHeight="56"
             IsPullToRefreshEnabled="false"
-            CachingStrategy="RecycleElement"
             HasUnevenRows="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
