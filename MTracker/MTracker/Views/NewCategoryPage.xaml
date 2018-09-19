@@ -93,6 +93,14 @@
                     Opacity="0"/>
             </Grid>
             
+            <Button
+                x:Name="DeleteButton"
+                Text="{Binding DeleteText}"
+                BackgroundColor="Transparent"
+                IsEnabled="{Binding DeleteEnabled}"
+                IsVisible="{Binding DeleteVisible}"
+                />
+            
             <StackLayout
                 VerticalOptions="EndAndExpand"
                 Orientation="Horizontal">

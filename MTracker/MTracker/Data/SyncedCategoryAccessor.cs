@@ -59,7 +59,7 @@ namespace MTracker.Data
             }
             if (args.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (var item in args.NewItems)
+                foreach (var item in args.OldItems)
                 {
                     await RemoveAsync(item as Category);
                     return;
@@ -87,11 +87,6 @@ namespace MTracker.Data
                 await Database.UpdateAsync(category);
             else
                 await Database.InsertAsync(category);
-        }
-
-        public void Add(Category category)
-        {
-            AddAsync(category).Wait();
         }
 
         public Category GetByID(int ID) => ObservableList.FirstOrDefault((obj) => obj.ID == ID+1);

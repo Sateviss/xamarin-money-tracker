@@ -83,11 +83,24 @@ namespace MTracker.ViewModel
             taskCompletion.SetResult(null);
         }
 
+        public void Delete()
+        {
+            App.CategoryAccessor.ObservableList.Remove(Category);
+            Cancel();
+        }
+
+        private readonly int entryCount;
+
+        public bool DeleteEnabled => entryCount == 0;
+        public bool DeleteVisible => Category.ID != 0;
+        public string DeleteText => DeleteEnabled ? "Delete" :
+        $"Can't delete this category because it's associated with {entryCount} entr{(entryCount == 1?"y":"ies")}";
 
         public NewCategoryViewModel(Category myCategory)
         {
             Title = myCategory.ID == 0 ? "New category" : "Editing category";
             Category = myCategory;
+            entryCount = App.EntryAccessor.CountByCategoryID(Category.ID);
             taskCompletion = new TaskCompletionSource<Category>();
         }
 

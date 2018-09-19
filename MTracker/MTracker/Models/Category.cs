@@ -10,7 +10,7 @@ namespace MTracker.Models
     public class Category : IEquatable<Category>
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int ID { get; set; } = 0;
 
         public string Name
         {

@@ -199,5 +199,20 @@ namespace MTracker.Data
         {
             AddAsync(entry).Wait();
         }
+
+        public int CountByCategoryID(int ID)
+        {
+            return Task.Run(() => CountByCategoryIDAsync(ID)).GetAwaiter().GetResult();
+        }
+
+        public async Task<int> CountByCategoryIDAsync(int ID)
+        {
+            var queryRes = 
+                await Database.QueryAsync<Entry>(
+                 "SELECT * " +
+                 "FROM [Entry] " +
+                $"WHERE [CategoryID] = {ID-1}");
+            return queryRes.Count();
+        }
     }
 }
