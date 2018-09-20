@@ -20,11 +20,13 @@
     <Folder Include="Data\" />
     <Folder Include="Views\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Charters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Views\MyPage.xaml.cs" />
     <Compile Remove="Data\Database.cs" />
+    <Compile Remove="Data\Charter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\AboutPage.xaml.cs">

@@ -2,15 +2,20 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
     x:Class="MTracker.Views.ChartPage"
     Title="Charts">
-    <StackLayout>
-        <Label
-        Text="[CHARTS]"
-        FontSize="50"
-        FontAttributes="Bold"
-        VerticalOptions="CenterAndExpand"
-        HorizontalOptions="CenterAndExpand"
-        HorizontalTextAlignment="Center"/>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout
+            Margin="8">
+            <microcharts:ChartView 
+                x:Name="meChartView"
+                BackgroundColor="Transparent"/>
+            <Label
+                x:Name="Label"
+                FontSize="20"
+                IsEnabled="false"
+                HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microcharts;
+using SkiaSharp;
+using MTracker.Charters;
 
 namespace MTracker.Views
 {
@@ -12,7 +12,16 @@ namespace MTracker.Views
         public ChartPage()
         {
             InitializeComponent();
-            
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var chart = new CharterMonthlyPie();
+            meChartView.Chart = chart.GetChart();
+            meChartView.HeightRequest = chart.GetHeight();
+            Label.Text = chart.GetLabel();
         }
     }
 }

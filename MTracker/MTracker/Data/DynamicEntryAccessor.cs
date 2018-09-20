@@ -214,5 +214,18 @@ namespace MTracker.Data
                 $"WHERE [CategoryID] = {ID-1}");
             return queryRes.Count();
         }
+
+        public List<Entry> GetFromDate(DateTime date)
+        {
+            return Task.Run(() => GetFromDateAsync(date)).GetAwaiter().GetResult();
+        }
+
+        public async Task<List<Entry>> GetFromDateAsync(DateTime date)
+        {
+            return await Database.QueryAsync<Entry>(
+                         "SELECT * " +
+                         "FROM [Entry] " +
+                        $"WHERE [Date] > {date.ToShortDateString()}");
+        }
     }
 }
