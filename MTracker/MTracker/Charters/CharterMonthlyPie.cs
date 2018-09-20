@@ -21,11 +21,13 @@ namespace MTracker.Charters
                 var val = data.Where((arg) => { return arg.CategoryID == category.ID - 1; }).Sum((arg) => { return arg.Amount; });
                 filteredData.Add(new Entry(val) { Label = category.Name, Color = SKColor.Parse(category.Color), ValueLabel = val.ToString("F0") });
             }
-            chart = new DonutChart();
-            chart.BackgroundColor = SKColor.Parse("#00000000");
-            chart.Entries = filteredData;
-            chart.LabelTextSize = 50;
-            chart.HoleRadius = 0.7f;
+            chart = new DonutChart
+            {
+                BackgroundColor = SKColor.Parse("#00000000"),
+                Entries = filteredData,
+                LabelTextSize = 50,
+                HoleRadius = 0.7f
+            };
         }
 
         public Chart GetChart()

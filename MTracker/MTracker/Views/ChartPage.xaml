@@ -4,18 +4,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
     x:Class="MTracker.Views.ChartPage"
-    Title="Charts">
+    Title="{Binding Title}">
     <ScrollView>
         <StackLayout
-            Margin="8">
+            x:Name="Scroll">
+<!--        <StackLayout>
             <microcharts:ChartView 
-                x:Name="meChartView"
-                BackgroundColor="Transparent"/>
+                x:Name="ChartViewItem"
+                Chart="{Binding .GetChart()}"
+                BackgroundColor="Transparent"
+                HeightRequest="{Binding .GetHeight()}"/>
             <Label
+                Text="{Binding .GetLabel()}"
                 x:Name="Label"
                 FontSize="20"
                 IsEnabled="false"
                 HorizontalTextAlignment="Center"/>
+        </StackLayout>-->
         </StackLayout>
     </ScrollView>
 </ContentPage>
