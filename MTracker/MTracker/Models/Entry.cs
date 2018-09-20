@@ -24,6 +24,8 @@ namespace MTracker.Models
         public const float ValueNull = -0.80085135f;
         public const int CutLength = 16;
 
+        public Entry GetCopy() => MemberwiseClone() as Entry;
+
         public string AmountString 
         {
             get
