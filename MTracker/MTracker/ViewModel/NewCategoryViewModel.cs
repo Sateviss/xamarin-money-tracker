@@ -99,7 +99,7 @@ namespace MTracker.ViewModel
         public NewCategoryViewModel(Category myCategory)
         {
             Title = myCategory.ID == 0 ? "New category" : "Editing category";
-            Category = myCategory;
+            Category = myCategory.GetCopy();
             entryCount = App.EntryAccessor.CountByCategoryID(Category.ID);
             taskCompletion = new TaskCompletionSource<Category>();
         }

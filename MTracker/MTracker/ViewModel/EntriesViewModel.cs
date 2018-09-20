@@ -108,7 +108,9 @@ namespace MTracker.ViewModel
         {
             var newItem = await NewEntryViewModel.EditEntry(contentPage, SelectedEntries[0]);
             if (newItem != null)
+            {
                 await App.EntryAccessor.AddAsync(newItem);
+            }
         }
     }
 }
