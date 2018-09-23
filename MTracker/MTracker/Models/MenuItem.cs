@@ -1,5 +1,4 @@
-﻿using System;
-namespace MTracker.Models
+﻿namespace MTracker.Models
 {
     public enum MenuItemType
     {

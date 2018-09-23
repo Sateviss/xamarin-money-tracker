@@ -1,13 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
-using MTracker.Models;
-using MTracker.ViewModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections;
+using MTracker.Models;
 using SQLite;
-using System.Collections.Specialized;
 
 namespace MTracker.Data
 {
