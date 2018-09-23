@@ -7,14 +7,14 @@
    Title="About">
     <StackLayout>
         <Label
-        Text="[КОНОВАЛОВ СОСИ ХУЙ]"
+        Text="[АЗАРОВ СОСИ ХУЙ]"
         FontSize="50"
         FontAttributes="Bold"
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand"
         HorizontalTextAlignment="Center"/>
         <Label
-        Text="© Eugene Pisarchcik MMXVIII"
+        Text="© Eugene Pisarchiсk MMXVIII"
         FontSize="20"
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand"
