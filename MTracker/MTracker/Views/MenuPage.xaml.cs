@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using Xamarin.Forms;
 using MTracker.Models;
+using Xamarin.Forms;
 
 namespace MTracker.Views
 {

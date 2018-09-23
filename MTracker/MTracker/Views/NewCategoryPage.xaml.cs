@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using MTracker.Models;
+﻿using MTracker.Models;
 using MTracker.ViewModel;
 using Xamarin.Forms;
 

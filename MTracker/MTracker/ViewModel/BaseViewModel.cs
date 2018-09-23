@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Xamarin.Forms;
-
-using MTracker.Models;
-
 namespace MTracker.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
