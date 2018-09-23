@@ -1,23 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
-   xmlns="http://xamarin.com/schemas/2014/forms"
-   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-   x:Class="MTracker.Views.AboutPage" 
-   xmlns:vm="clr-namespace:MTracker.ViewModel"
-   Title="About">
-    <StackLayout>
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MTracker.Views.AboutPage" 
+    xmlns:vm="clr-namespace:MTracker.ViewModel"
+    Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="IconFrame" TargetType="Frame">
+                <Setter Property="Padding" Value="2"/>
+                <Setter Property="BackgroundColor" Value="#00000000"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout
+        Margin="8"
+        Padding="16"
+        Spacing="16">
+        <Grid
+            Margin="8"
+            ColumnSpacing="16"
+            RowSpacing="32"
+            HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="128"/>
+                <RowDefinition Height="128"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+           <StackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalOptions="FillAndExpand">
+                <Frame
+                    x:Name="GitHubFrame"
+                    Style="{StaticResource IconFrame}">
+                    <Image
+                        HeightRequest="80"
+                        Source="logo_github.png"/>
+                </Frame>
+                <Label
+                    FontSize="12"
+                    VerticalOptions="End"
+                    HorizontalTextAlignment="Center"
+                    Text="Repository hosted on GitHub"/>
+            </StackLayout>
+            
+           <StackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalOptions="FillAndExpand">
+                <Frame
+                    x:Name="XamarinFrame"
+                    Style="{StaticResource IconFrame}">
+                    <Image
+                        HeightRequest="80"
+                        Source="logo_xamarin.xml"/>
+                </Frame>
+                <Label
+                    FontSize="12"
+                    VerticalOptions="End"
+                    HorizontalTextAlignment="Center"
+                    Text="Created using Xamarin.Forms"/>
+            </StackLayout>
+            
+           <StackLayout
+                Grid.Row="0"
+                Grid.Column="1"
+                VerticalOptions="FillAndExpand">
+                <Frame
+                    x:Name="FKSISFrame"
+                    Style="{StaticResource IconFrame}">
+                    <Image
+                        HeightRequest="80"
+                        Source="logo_fksis.png"/>
+                </Frame>
+                <Label
+                    FontSize="12"
+                    VerticalOptions="End"
+                    HorizontalTextAlignment="Center"
+                    Text="Made for the Faculty of Computer Systems and Networks"/>
+            </StackLayout>
+            
+           <StackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                VerticalOptions="FillAndExpand">
+                <Frame
+                    x:Name="BerezhFrame"
+                    Style="{StaticResource IconFrame}">
+                    <Image
+                        HeightRequest="80"
+                        Source="logo_berezh.png"/>
+                </Frame>
+                <Label
+                    FontSize="12"
+                    VerticalOptions="End"
+                    HorizontalTextAlignment="Center"
+                    Text="Our Lord and Savior"/>
+            </StackLayout>
+            
+        </Grid>
         <Label
-        Text="[АЗАРОВ СОСИ ХУЙ]"
-        FontSize="50"
-        FontAttributes="Bold"
-        VerticalOptions="CenterAndExpand"
-        HorizontalOptions="CenterAndExpand"
-        HorizontalTextAlignment="Center"/>
+            Text="This app is created as an assignment for a course at the Belarusian State University of Informatics and Radioelectronics."
+            FontSize="16"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"/>
         <Label
-        Text="© Eugene Pisarchiсk MMXVIII"
-        FontSize="20"
-        VerticalOptions="CenterAndExpand"
-        HorizontalOptions="CenterAndExpand"
-        HorizontalTextAlignment="Center"/>
+            Text="Licensed under GPL 3.0"
+            FontSize="12"
+            VerticalOptions="End"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"/>
+        <Label
+            Text="© Eugene Pisarchiсk 2018"
+            FontSize="8"
+            VerticalOptions="End"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"/>
     </StackLayout>
 </ContentPage>

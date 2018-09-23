@@ -161,6 +161,10 @@
     <AndroidResource Include="Resources\drawable\balance_icon.xml" />
     <AndroidResource Include="Resources\drawable\error_icon.xml" />
     <AndroidResource Include="Resources\drawable\stack_add_icon.xml" />
+    <AndroidResource Include="Resources\drawable\logo_fksis.png" />
+    <AndroidResource Include="Resources\drawable\logo_github.png" />
+    <AndroidResource Include="Resources\drawable\logo_xamarin.xml" />
+    <AndroidResource Include="Resources\drawable\logo_berezh.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

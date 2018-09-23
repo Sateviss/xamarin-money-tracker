@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using MTracker.Models;
-using MTracker.Views;
-using MTracker.Data;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MTracker.Data;
 using Xamarin.Forms;
-using System.Threading;
 
 namespace MTracker.ViewModel
 {
