@@ -58,7 +58,6 @@ namespace MTracker.Views
                 {
                     Content = SL,
                     Padding = 8,
-                    Margin = 0,
                     Margin = -1,
                     CornerRadius = 0,
                     BackgroundColor = Color.Transparent,
