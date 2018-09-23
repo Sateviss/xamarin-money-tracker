@@ -14,17 +14,20 @@
     <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
     <PackageReference Include="Microcharts" Version="0.7.1" />
+    <PackageReference Include="Refractored.XamForms.PullToRefresh" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Data\" />
     <Folder Include="Views\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Charters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Views\MyPage.xaml.cs" />
     <Compile Remove="Data\Database.cs" />
+    <Compile Remove="Data\Charter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\AboutPage.xaml.cs">
