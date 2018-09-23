@@ -21,36 +21,62 @@ namespace MTracker.Views
             InitializeComponent();
             vm = new ChartViewModel();
             BindingContext = vm;
+            vm.Update = true;
+            PullToRefresh.RefreshCommand = new Command(() => {
+                vm.ReloadData();
+                ReloadCharts();
+                PullToRefresh.IsRefreshing = false;
+            });
+
+        }
+
+        private void ReloadCharts()
+        {
+            var list = new List<View>();
             foreach (var chart in vm.ChartList)
             {
+                var CV = new ChartView
+                {
+                    Chart = chart.GetChart(),
+                    HeightRequest = chart.GetHeight(),
+                    BindingContext = chart
+                };
+
+                var L = new Label
+                {
+                    Text = chart.GetLabel(),
+                    FontSize = 16,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    IsEnabled = false
+                };
+
                 var SL = new StackLayout();
-                var CV = new ChartView();
-                CV.BindingContext = chart;
-                var L = new Label();
                 SL.Children.Add(CV);
                 SL.Children.Add(L);
-                stacks.Add(SL);
 
+                var F = new Frame
+                {
+                    Content = SL,
+                    Padding = 8,
+                    Margin = 0,
+                    CornerRadius = 0,
+                    BackgroundColor = Color.Transparent,
+                    BorderColor = Color.Black
+                };
+
+                list.Add(F);
             }
+            Scroll.Children.Clear();
+            list.ForEach((obj) => Scroll.Children.Add(obj));
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            foreach (var SL in stacks)
-            {
-                var CV = SL.Children.First((arg) => arg is ChartView) as ChartView;
-                var charter = CV.BindingContext as ICharter;
-                CV.Chart = charter.GetChart();
-                CV.HeightRequest = charter.GetHeight();
-
-                var L = SL.Children.First((arg) => arg is Label) as Label;
-                L.Text = charter.GetLabel();
-                L.FontSize = 20;
-                L.HorizontalTextAlignment = TextAlignment.Center;
-                L.IsEnabled = false;
-                Scroll.Children.Add(SL);
-            }
+            if (!vm.Update)
+                return;
+            ReloadCharts();
+            vm.Update = false;
         }
     }
 }

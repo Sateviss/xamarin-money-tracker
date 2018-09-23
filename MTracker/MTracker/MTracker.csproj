@@ -14,6 +14,7 @@
     <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
     <PackageReference Include="Microcharts" Version="0.7.1" />
+    <PackageReference Include="Refractored.XamForms.PullToRefresh" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
