@@ -28,6 +28,8 @@ namespace MTracker.ViewModel
             ChartList = new List<ICharter>
             {
                 new CharterMonthlyPie(),
+                new CharterDailyBars(),
+                new CharterDailyByMonthDots()
             };
         }
     }

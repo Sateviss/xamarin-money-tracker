@@ -19,14 +19,14 @@ namespace MTracker.Charters
             foreach (var category in App.CategoryAccessor.ObservableList)
             {
                 var val = data.Where((arg) => { return arg.CategoryID == category.ID - 1; }).Sum((arg) => { return arg.Amount; });
-                filteredData.Add(new Entry(val) { Label = category.Name, Color = SKColor.Parse(category.Color), ValueLabel = val.ToString("F0") });
+                filteredData.Add(new Entry(val) { Label = category.Name, Color = SKColor.Parse(category.Color), ValueLabel = val.ToString("F2") });
             }
             chart = new DonutChart
             {
                 BackgroundColor = SKColor.Parse("#00000000"),
                 Entries = filteredData,
-                LabelTextSize = 50,
-                HoleRadius = 0.7f
+                LabelTextSize = 40,
+                HoleRadius = 0.6f
             };
         }
 
