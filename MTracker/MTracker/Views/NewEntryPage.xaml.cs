@@ -1,8 +1,11 @@
 ﻿using MTracker.ViewModel;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace MTracker.Views
 {
+
+    [XamlCompilation(XamlCompilationOptions.Skip)]
     public partial class NewEntryPage : ContentPage
     {
         public NewEntryPage()

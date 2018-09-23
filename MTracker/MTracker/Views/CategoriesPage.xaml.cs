@@ -1,9 +1,11 @@
 ﻿using MTracker.Models;
 using MTracker.ViewModel;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace MTracker.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Skip)]
     public partial class CategoriesPage : ContentPage
     {
         public CategoriesPage()
