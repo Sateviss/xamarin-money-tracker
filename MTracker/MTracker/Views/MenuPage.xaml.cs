@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using MTracker.Models;
+using Xamarin.Forms.Xaml;
 
 namespace MTracker.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Skip)]
     public partial class MenuPage : ContentPage
     {
         MainPage MainPage { get => (MainPage)Application.Current.MainPage; }
