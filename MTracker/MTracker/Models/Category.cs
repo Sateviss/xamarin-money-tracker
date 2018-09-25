@@ -27,8 +27,6 @@ namespace MTracker.Models
             }
         }
 
-        #region Ignore
-
         private string _name;
         private string _color;
 
@@ -77,8 +75,5 @@ namespace MTracker.Models
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Color);
             return hashCode;
         }
-        #endregion
-
-
     }
 }
