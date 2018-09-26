@@ -19,13 +19,13 @@ namespace MTracker.Models
         public string Currency { get; set; }
         public int CategoryID { get; set; } = -1;
 
-        #region Ignore
-
         public const float ValueNull = -0.80085135f;
+
         public const int CutLength = 16;
 
         public Entry GetCopy() => MemberwiseClone() as Entry;
 
+        [Ignore]
         public string AmountString 
         {
             get
@@ -39,6 +39,7 @@ namespace MTracker.Models
             }
         }
 
+        [Ignore]
         public string Color 
         {
             get
@@ -48,6 +49,7 @@ namespace MTracker.Models
             }
         }
 
+        [Ignore]
         public string NameShort 
         {
             get
@@ -56,9 +58,12 @@ namespace MTracker.Models
             }
         }
 
+        [Ignore]
         public float Rotation => Selected ? 360 : 180;
+        [Ignore]
         public float IconOpacity => Selected?1:0;
 
+        [Ignore]
         public bool Selected 
         { get => selected; 
             set
@@ -108,7 +113,6 @@ namespace MTracker.Models
 
         #endregion
 
-        #endregion
 
     }
 }
