@@ -15,7 +15,7 @@ namespace MTracker
 
         public App()
         {
-            Text.Culture = new CultureInfo("ru-RU");
+            //Text.Culture = new CultureInfo("ru-RU");
             InitializeComponent();
             EntryAccessor = new DynamicEntryAccessor();
             CategoryAccessor = new SyncedCategoryAccessor();

@@ -65,69 +65,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Resources\drawable\baseline_delete_24.xml">
-      <Link>Resources\Resources\drawable\baseline_delete_24.xml</Link>
-    </None>
-    <None Include="Resources\drawable-hdpi\baseline_delete_white_18.png">
-      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_18.png</Link>
-    </None>
-    <None Include="Resources\drawable-hdpi\baseline_delete_white_24.png">
-      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_24.png</Link>
-    </None>
-    <None Include="Resources\drawable-hdpi\baseline_delete_white_36.png">
-      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_36.png</Link>
-    </None>
-    <None Include="Resources\drawable-hdpi\baseline_delete_white_48.png">
-      <Link>Resources\Resources\drawable-hdpi\baseline_delete_white_48.png</Link>
-    </None>
-    <None Include="Resources\drawable-mdpi\baseline_delete_white_18.png">
-      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_18.png</Link>
-    </None>
-    <None Include="Resources\drawable-mdpi\baseline_delete_white_24.png">
-      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_24.png</Link>
-    </None>
-    <None Include="Resources\drawable-mdpi\baseline_delete_white_36.png">
-      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_36.png</Link>
-    </None>
-    <None Include="Resources\drawable-mdpi\baseline_delete_white_48.png">
-      <Link>Resources\Resources\drawable-mdpi\baseline_delete_white_48.png</Link>
-    </None>
-    <None Include="Resources\drawable-xhdpi\baseline_delete_white_18.png">
-      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_18.png</Link>
-    </None>
-    <None Include="Resources\drawable-xhdpi\baseline_delete_white_24.png">
-      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_24.png</Link>
-    </None>
-    <None Include="Resources\drawable-xhdpi\baseline_delete_white_36.png">
-      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_36.png</Link>
-    </None>
-    <None Include="Resources\drawable-xhdpi\baseline_delete_white_48.png">
-      <Link>Resources\Resources\drawable-xhdpi\baseline_delete_white_48.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_18.png">
-      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_18.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_24.png">
-      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_24.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_36.png">
-      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_36.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxhdpi\baseline_delete_white_48.png">
-      <Link>Resources\Resources\drawable-xxhdpi\baseline_delete_white_48.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_18.png">
-      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_18.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_24.png">
-      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_24.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_36.png">
-      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_36.png</Link>
-    </None>
-    <None Include="Resources\drawable-xxxhdpi\baseline_delete_white_48.png">
-      <Link>Resources\Resources\drawable-xxxhdpi\baseline_delete_white_48.png</Link>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -165,6 +102,7 @@
     <AndroidResource Include="Resources\drawable\logo_github.png" />
     <AndroidResource Include="Resources\drawable\logo_xamarin.xml" />
     <AndroidResource Include="Resources\drawable\logo_berezh.png" />
+    <AndroidResource Include="Resources\drawable\app_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
