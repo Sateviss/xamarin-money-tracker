@@ -1,5 +1,5 @@
 ﻿using System;
-
+using MTracker.Resources;
 using Xamarin.Forms;
 
 
@@ -14,7 +14,7 @@ namespace MTracker.ViewModel
 
         public AboutViewModel()
         {
-            Title = "About";
+            Title = Text.AboutPageLabel;
         }
 
         public void OpenBerezh() => Device.OpenUri(new Uri(BerezhURL));

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MTracker.Data;
+using MTracker.Resources;
 using Xamarin.Forms;
 
 namespace MTracker.ViewModel
@@ -25,7 +26,7 @@ namespace MTracker.ViewModel
         public EntriesViewModel(ContentPage page)
         {
             contentPage = page;
-            Title = "Entries";
+            Title = Text.EntriesPageLabel;
 
             SelectedEntries = new List<Models.Entry>();
             Entries = App.EntryAccessor;

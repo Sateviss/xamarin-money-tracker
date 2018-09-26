@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>   
+
+    <data name="CategoriesPageLabel" xml:space="preserve">
+        <value>Categories</value>
+    </data>    
+    
+    <data name="EntriesPageLabel" xml:space="preserve">
+        <value>Entries</value>
+    </data>
+    
+    
+        <!-- CHART PAGE -->
+    
+        <data name="ChartPageLabel" xml:space="preserve">
+            <value>Charts</value>
+        </data>
+        
+        <data name="MonthlyPieLabel" xml:space="preserve">
+            <value>Spending by category (last 30 days)</value>
+        </data>
+
+        <data name="DailyBarsLabel" xml:space="preserve">
+            <value>Daily spending (last 7 days))</value>
+        </data>
+        
+        <data name="DalyByMonthLabel" xml:space="preserve">
+            <value>Daly spending by month (last year)</value>
+        </data>
+
+        <!-- NEW ENTRY PAGE -->
+    
+        <data name="NewEntryNewPageLabel" xml:space="preserve">
+            <value>New entry</value>
+        </data>
+    
+        <data name="NewEntryEditPageLabel" xml:space="preserve">
+            <value>Edit entry</value>
+        </data>
+    
+        <data name="CategoryPickerLabel" xml:space="preserve">
+            <value>Category</value>
+        </data>
+    
+        <data name="EntryTitleEntryLabel" xml:space="preserve">
+            <value>Entry title</value>
+        </data>
+    
+        <data name="AmountEditorLabel" xml:space="preserve">
+            <value>Amount</value>
+        </data>
+    
+        <!-- COMMON -->
+        
+        <data name="CancelLabel" xml:space="preserve">
+            <value>Cancel</value>
+        </data>
+    
+        <data name="AcceptLabel" xml:space="preserve">
+            <value>Accept</value>
+        </data>
+    
+        <!-- NEW CATEGORY PAGE -->
+    
+        <data name="NewCategoryNewPageLabel" xml:space="preserve">
+            <value>New category</value>
+        </data>
+        
+        <data name="NewCategoryEditPageLabel" xml:space="preserve">
+            <value>Edit category</value>
+        </data>
+        
+        <data name="NameLabel" xml:space="preserve">
+            <value>Name</value>
+        </data>
+    
+        <data name="ColorLabel" xml:space="preserve">
+            <value>Color</value>
+        </data>
+    
+        <data name="RedLabel" xml:space="preserve">
+            <value>Red</value>
+        </data>
+    
+        <data name="GreenLabel" xml:space="preserve">
+            <value>Green</value>
+        </data>
+    
+        <data name="BlueLabel" xml:space="preserve">
+            <value>Blue</value>
+        </data>
+    
+        <!-- ABOUT PAGE -->
+        
+        <data name="AboutPageLabel" xml:space="preserve">
+            <value>About</value>
+        </data>
+    
+        <data name="GitHubLabel" xml:space="preserve">
+            <value>Repository hosted on GitHub</value>
+        </data>
+    
+        <data name="XamarinLabel" xml:space="preserve">
+            <value>Created with Xamarin.Forms</value>
+        </data>
+    
+        <data name="FKSiSLabel" xml:space="preserve">
+            <value>Made for the Faculty of Computer Networks and Systems</value>
+        </data>
+    
+        <data name="BerezhLabel" xml:space="preserve">
+            <value>I give this tribute to please our Lord and Savior</value>
+        </data>
+    
+        <data name="InfoLabel" xml:space="preserve">
+            <value>This app is created as an assignment for a course at the Belarusian State University of Informatics and Radioelectronics.</value>
+        </data>
+    
+        <data name="LicenseLabel" xml:space="preserve">
+            <value>Licensed under GPL 3.0</value>
+        </data>
+    
+        <data name="CopyrightLabel" xml:space="preserve">
+            <value>© Eugene Pisarhick 2018</value>
+        </data>
+    
+    
+    
+</root>

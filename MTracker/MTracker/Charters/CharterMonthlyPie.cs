@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microcharts;
+using MTracker.Resources;
 using SkiaSharp;
 
 namespace MTracker.Charters
@@ -42,7 +43,7 @@ namespace MTracker.Charters
 
         public string GetLabel()
         {
-            return "Spending by category (last 30 days)";
+            return Text.MonthlyPieLabel;
         }
     }
 }

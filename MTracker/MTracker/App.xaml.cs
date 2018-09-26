@@ -2,6 +2,8 @@
 using Xamarin.Forms.Xaml;
 using MTracker.Data;
 using MTracker.Views;
+using MTracker.Resources;
+using System.Globalization;
 
 namespace MTracker
 {
@@ -13,6 +15,7 @@ namespace MTracker
 
         public App()
         {
+            Text.Culture = new CultureInfo("ru-RU");
             InitializeComponent();
             EntryAccessor = new DynamicEntryAccessor();
             CategoryAccessor = new SyncedCategoryAccessor();

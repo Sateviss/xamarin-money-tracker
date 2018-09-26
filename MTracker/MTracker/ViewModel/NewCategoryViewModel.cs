@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Threading.Tasks;
 using MTracker.Models;
+using MTracker.Resources;
 using MTracker.Views;
 using Xamarin.Forms;
 
@@ -97,7 +98,7 @@ namespace MTracker.ViewModel
 
         public NewCategoryViewModel(Category myCategory)
         {
-            Title = myCategory.ID == 0 ? "New category" : "Editing category";
+            Title = myCategory.ID == 0 ? Text.NewCategoryNewPageLabel : Text.NewCategoryEditPageLabel;
             Category = myCategory.GetCopy();
             entryCount = App.EntryAccessor.CountByCategoryID(Category.ID);
             taskCompletion = new TaskCompletionSource<Category>();

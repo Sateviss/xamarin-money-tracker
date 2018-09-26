@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MTracker.Models;
+using MTracker.Resources;
 using MTracker.Views;
 using Xamarin.Forms;
 
@@ -104,7 +105,7 @@ namespace MTracker.ViewModel
 
         public NewEntryViewModel(Models.Entry myEntry)
         {
-            Title = myEntry.ID == 0?"New entry":"Editing entry";
+            Title = myEntry.ID == 0? Text.NewEntryNewPageLabel : Text.NewEntryEditPageLabel;
             Entry = myEntry;
             date = Entry.Date.Date;
             time = Entry.Date.TimeOfDay;

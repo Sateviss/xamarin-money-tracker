@@ -5,7 +5,7 @@
     x:Class="MTracker.Views.EntriesPage"
     xmlns:vm="clr-namespace:MTracker.ViewModel"
     xmlns:local="clr-namespace:MTracker.Views;assembly=MTracker.Views"
-    Title="Entries">
+    Title="{Binding Title}">
     <ContentPage.Content>
         <ListView
             SelectionMode="None"

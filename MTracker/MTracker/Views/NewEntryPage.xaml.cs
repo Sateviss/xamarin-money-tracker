@@ -1,4 +1,5 @@
-﻿using MTracker.ViewModel;
+﻿using MTracker.Resources;
+using MTracker.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,6 +22,13 @@ namespace MTracker.Views
             BindingContext = viewModel;
 
             InitializeComponent();
+
+            CategoryPicker.Title = Text.CategoryPickerLabel;
+            TitleEntry.Placeholder = Text.EntryTitleEntryLabel;
+            AmountEntry.Placeholder = Text.AmountEditorLabel;
+
+            CancelButton.Text = Text.CancelLabel;
+            AcceptButton.Text = Text.AcceptLabel;
 
             CategoryPicker.ItemsSource = viewModel.Categories;
 
