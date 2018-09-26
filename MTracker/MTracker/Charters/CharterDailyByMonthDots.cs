@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microcharts;
+using MTracker.Resources;
 using SkiaSharp;
 
 namespace MTracker.Charters
@@ -26,7 +27,7 @@ namespace MTracker.Charters
                 var entry = new Entry(sum)
                 {
                     Color = SKColor.Parse("#FFFFFF"),
-                    Label = month.ToString("MMM"),
+                    Label = month.ToString("MMM", Text.Culture),
                     ValueLabel = sum.ToString("F2")
                 };
                 filteredData.Add(entry);
@@ -54,7 +55,7 @@ namespace MTracker.Charters
 
         public string GetLabel()
         {
-            return "Daily spending by month (last year)";
+            return Text.DalyByMonthLabel;
         }
     }
 }

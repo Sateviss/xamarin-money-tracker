@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microcharts;
+using MTracker.Resources;
 using SkiaSharp;
 
 namespace MTracker.Charters
 {
-	public class CharterDailyBars : ICharter
+    public class CharterDailyBars : ICharter
     {
         private List<Models.Entry> data;
         private List<Entry> filteredData;
@@ -24,7 +25,7 @@ namespace MTracker.Charters
                 var entry = new Entry(sum)
                 {
                     Color = SKColor.Parse("#FFFFFF"),
-                    Label = day.DayOfWeek.ToString(),
+                    Label = day.ToString("ddd", Text.Culture),
                     ValueLabel = sum.ToString("F2")
                 };
                 filteredData.Add(entry);
@@ -50,7 +51,7 @@ namespace MTracker.Charters
 
         public string GetLabel()
         {
-            return "Daily spending (last 7 days)";
+            return Text.DailyBarsLabel;
         }
     }
 }

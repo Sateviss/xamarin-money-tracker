@@ -43,6 +43,7 @@
                         Source="logo_github.png"/>
                 </Frame>
                 <Label
+                    x:Name="GitHubLabel"
                     FontSize="12"
                     VerticalOptions="End"
                     HorizontalTextAlignment="Center"
@@ -61,6 +62,7 @@
                         Source="logo_xamarin.xml"/>
                 </Frame>
                 <Label
+                    x:Name="XamarinLabel"
                     FontSize="12"
                     VerticalOptions="End"
                     HorizontalTextAlignment="Center"
@@ -79,6 +81,7 @@
                         Source="logo_fksis.png"/>
                 </Frame>
                 <Label
+                    x:Name="FKSiSLabel"
                     FontSize="12"
                     VerticalOptions="End"
                     HorizontalTextAlignment="Center"
@@ -97,6 +100,7 @@
                         Source="logo_berezh.png"/>
                 </Frame>
                 <Label
+                    x:Name="BerezhLabel"
                     FontSize="12"
                     VerticalOptions="End"
                     HorizontalTextAlignment="Center"
@@ -105,18 +109,21 @@
             
         </Grid>
         <Label
+            x:Name="InfoLabel"
             Text="This app is created as an assignment for a course at the Belarusian State University of Informatics and Radioelectronics."
             FontSize="16"
             VerticalOptions="StartAndExpand"
             HorizontalOptions="CenterAndExpand"
             HorizontalTextAlignment="Center"/>
         <Label
+            x:Name="LicenseLabel"
             Text="Licensed under GPL 3.0"
             FontSize="12"
             VerticalOptions="End"
             HorizontalOptions="CenterAndExpand"
             HorizontalTextAlignment="Center"/>
         <Label
+            x:Name="CopyrightLabel"
             Text="© Eugene Pisarchiсk 2018"
             FontSize="8"
             VerticalOptions="End"

@@ -22,19 +22,49 @@
     <Folder Include="Views\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Charters\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Views\MyPage.xaml.cs" />
     <Compile Remove="Data\Database.cs" />
     <Compile Remove="Data\Charter.cs" />
+    <Compile Remove="Resources\Text.ru.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Text.Designer.cs">
+      <DependentUpon>Text.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Textru.Designer.cs">
+      <DependentUpon>Text.ru-RU.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove=".DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="TextResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Text.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Textru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Textru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Text.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Text.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

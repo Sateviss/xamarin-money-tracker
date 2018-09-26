@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=ru-RU, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=ru-RU, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <data name="CategoriesPageLabel" xml:space="preserve">
+        <value>Категории</value>
+    </data>    
+    <data name="EntriesPageLabel" xml:space="preserve">
+        <value>Записи</value>
+    </data>
+
+        <!-- CHART PAGE -->
+    
+
+        <data name="ChartPageLabel" xml:space="preserve">
+            <value>Графики</value>
+        </data>
+        
+        <data name="MonthlyPieLabel" xml:space="preserve">
+            <value>Траты по категориям (последние 30 дней)</value>
+        </data>
+
+        <data name="DailyBarsLabel" xml:space="preserve">
+            <value>Ежедневные траты (последние 7 дней)</value>
+        </data>
+        
+        <data name="DalyByMonthLabel" xml:space="preserve">
+            <value>Ежедневные траты по месяцам (последний год)</value>
+        </data>
+    
+        <!-- NEW ENTRY PAGE -->
+    
+        <data name="NewEntryNewPageLabel" xml:space="preserve">
+            <value>Новая запись</value>
+        </data>
+    
+        <data name="NewEntryEditPageLabel" xml:space="preserve">
+            <value>Редактировать запись</value>
+        </data>
+    
+        <data name="CategoryPickerLabel" xml:space="preserve">
+            <value>Категория</value>
+        </data>
+    
+        <data name="EntryTitleEntryLabel" xml:space="preserve">
+            <value>Название записи</value>
+        </data>
+    
+        <data name="AmountEditorLabel" xml:space="preserve">
+            <value>Сумма</value>
+        </data>
+    
+        <!-- COMMON -->
+    
+        <data name="CancelLabel" xml:space="preserve">
+            <value>Отменить</value>
+        </data>
+    
+        <data name="AcceptLabel" xml:space="preserve">
+            <value>Принять</value>
+        </data>
+    
+        <!-- NEW CATEGORY PAGE -->
+    
+        <data name="NewCategoryNewPageLabel" xml:space="preserve">
+            <value>Новая категория</value>
+        </data>
+        
+        <data name="NewCategoryEditPageLabel" xml:space="preserve">
+            <value>Редактировать категорию</value>
+        </data>
+    
+        <data name="NameLabel" xml:space="preserve">
+            <value>Название</value>
+        </data>
+    
+        <data name="ColorLabel" xml:space="preserve">
+            <value>Цвет</value>
+        </data>
+    
+        <data name="RedLabel" xml:space="preserve">
+            <value>Красный</value>
+        </data>
+    
+        <data name="GreenLabel" xml:space="preserve">
+            <value>Зелёный</value>
+        </data>
+    
+        <data name="BlueLabel" xml:space="preserve">
+            <value>Синий</value>
+        </data>
+        
+        <!-- ABOUT PAGE -->
+        
+        <data name="AboutPageLabel" xml:space="preserve">
+            <value>О программе</value>
+        </data>
+    
+        <data name="GitHubLabel" xml:space="preserve">
+            <value>Репозиторий на GitHub</value>
+        </data>
+    
+        <data name="XamarinLabel" xml:space="preserve">
+            <value>Создано с использованием Xamarin.Forms</value>
+        </data>
+    
+        <data name="FKSiSLabel" xml:space="preserve">
+            <value>Сделано для Факультета Компьютерных Сетей и Систем</value>
+        </data>
+    
+        <data name="BerezhLabel" xml:space="preserve">
+            <value>Я отдаю это жалкое подношение нашему Повелителю и Спасителю</value>
+        </data>
+    
+        <data name="InfoLabel" xml:space="preserve">
+            <value>Данное приложение создано в качестве лаборатоной работы в Белорусском Государственном Университете Информатики и Радиоэлектроники.</value>
+        </data>
+    
+        <data name="LicenseLabel" xml:space="preserve">
+            <value>Распространяется по условиям GPL 3.0</value>
+        </data>
+    
+        <data name="CopyrightLabel" xml:space="preserve">
+            <value>© Евгений Писарчик 2018</value>
+        </data>
+    
+</root>

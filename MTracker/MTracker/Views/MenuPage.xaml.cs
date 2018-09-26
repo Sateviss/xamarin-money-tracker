@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MTracker.Models;
+using MTracker.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,10 +25,10 @@ namespace MTracker.Views
             InitializeComponent();
 
             Items = new List<MenuItem>{
-                new MenuItem {ID = (int)MenuItemType.Charts, Title = "Charts"},
-                new MenuItem {ID = (int)MenuItemType.Entries, Title = "Entries"},
-                new MenuItem {ID = (int)MenuItemType.Categories, Title = "Categories"},
-                new MenuItem {ID = (int)MenuItemType.About, Title = "About"}
+                new MenuItem {ID = (int)MenuItemType.Charts, Title = Text.ChartPageLabel},
+                new MenuItem {ID = (int)MenuItemType.Entries, Title = Text.EntriesPageLabel},
+                new MenuItem {ID = (int)MenuItemType.Categories, Title = Text.CategoriesPageLabel},
+                new MenuItem {ID = (int)MenuItemType.About, Title = Text.AboutPageLabel}
             };
 
             ListViewMenu.ItemsSource = Items;

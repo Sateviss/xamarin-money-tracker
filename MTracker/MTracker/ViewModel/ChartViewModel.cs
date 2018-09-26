@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MTracker.Charters;
+using MTracker.Resources;
 
 namespace MTracker.ViewModel
 {
@@ -18,7 +19,7 @@ namespace MTracker.ViewModel
 
         public ChartViewModel()
         {
-            Title = "Charts";
+            Title = Text.ChartPageLabel;
             ReloadData();
         }
 

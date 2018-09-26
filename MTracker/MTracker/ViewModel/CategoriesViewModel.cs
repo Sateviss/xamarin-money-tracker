@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MTracker.Models;
+using MTracker.Resources;
 using Xamarin.Forms;
 
 namespace MTracker.ViewModel
@@ -13,7 +14,7 @@ namespace MTracker.ViewModel
         public CategoriesViewModel(ContentPage Page)
         {
             page = Page;
-            Title = "Categories";
+            Title = Text.CategoriesPageLabel;
         }
 
         public async Task AddCategory()
