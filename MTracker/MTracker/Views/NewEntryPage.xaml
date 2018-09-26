@@ -5,117 +5,119 @@
     x:Class="MTracker.Views.NewEntryPage"
     Title="{Binding Title}">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout
-                Margin="16"
-                Spacing="16">
-                
-                <StackLayout
-                    Orientation="Horizontal"
-                    Spacing="16">
-                    <Image
-                        Source="category_icon.xml"/>
-                    <Grid
-                        HorizontalOptions="FillAndExpand"
-                        Padding="0">
-                        <Picker 
-                            Title="Category"
-                            ItemDisplayBinding="{Binding Name}"
-                            SelectedItem="{Binding SelectedCategory}"
-                            HorizontalOptions="FillAndExpand"
-                            x:Name="CategoryPicker"/>
-                        <Image
-                            Margin="8"
-                            x:Name="ErrorPicker"
-                            Source="error_icon.xml"
-                            HorizontalOptions="End"
-                            Opacity="0"/>
-                    </Grid>
-                </StackLayout>
-                
-                <StackLayout
-                    Orientation="Horizontal"
-                    Spacing="16">
-                    <Image
-                        Source="text_icon.xml"/>
-                    <Grid
-                        HorizontalOptions="FillAndExpand"
-                        Padding="0">
-                        <Entry
-                            x:Name="TitleEntry"
-                            HorizontalOptions="FillAndExpand"
-                            Text="{Binding EntryTitle}"
-                            Placeholder="Entry title"/>
-                        <Image
-                            Margin="8"
-                            x:Name="ErrorTitle"
-                            Source="error_icon.xml"
-                            HorizontalOptions="End"
-                            Opacity="0"/>
-                    </Grid>
-                </StackLayout>
-                
-                <StackLayout
-                    Orientation="Horizontal"
-                    Spacing="16">
-                    <Image
-                        Source="balance_icon.xml"/>
-                    <Grid
-                        HorizontalOptions="FillAndExpand"
-                        Padding="0">
-                        <Entry
-                            Keyboard="Numeric"
-                            Text="{Binding Amount}"
-                            HorizontalOptions="FillAndExpand"
-                            Placeholder="Amount"
-                            x:Name="AmountEntry"/>
-                        <Image
-                            Margin="8"
-                            x:Name="ErrorValue"
-                            Source="error_icon.xml"
-                            HorizontalOptions="End"
-                            Opacity="0"/>
-                    </Grid>
+        <StackLayout
+            Margin="16"
+            Spacing="16">
+            <ScrollView>
+                <StackLayout>
                     
-                    <Label
-                        Margin="12 0 0 0"
-                        Text="BYN"
-                        FontSize="20"
-                        VerticalOptions="Center"/>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <Image
+                            Source="category_icon.xml"/>
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            Padding="0">
+                            <Picker 
+                                Title="Category"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding SelectedCategory}"
+                                HorizontalOptions="FillAndExpand"
+                                x:Name="CategoryPicker"/>
+                            <Image
+                                Margin="8"
+                                x:Name="ErrorPicker"
+                                Source="error_icon.xml"
+                                HorizontalOptions="End"
+                                Opacity="0"/>
+                        </Grid>
+                    </StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <Image
+                            Source="text_icon.xml"/>
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            Padding="0">
+                            <Entry
+                                x:Name="TitleEntry"
+                                HorizontalOptions="FillAndExpand"
+                                Text="{Binding EntryTitle}"
+                                Placeholder="Entry title"/>
+                            <Image
+                                Margin="8"
+                                x:Name="ErrorTitle"
+                                Source="error_icon.xml"
+                                HorizontalOptions="End"
+                                Opacity="0"/>
+                        </Grid>
+                    </StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <Image
+                            Source="balance_icon.xml"/>
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            Padding="0">
+                            <Entry
+                                Keyboard="Numeric"
+                                Text="{Binding Amount}"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Amount"
+                                x:Name="AmountEntry"/>
+                            <Image
+                                Margin="8"
+                                x:Name="ErrorValue"
+                                Source="error_icon.xml"
+                                HorizontalOptions="End"
+                                Opacity="0"/>
+                        </Grid>
+                        
+                        <Label
+                            Margin="12 0 0 0"
+                            Text="BYN"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+                                
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <Image
+                            Source="date_icon.xml"/>
+                        <DatePicker
+                            Date="{Binding Date}"
+                            Format="yyyy-MM-dd"
+                            HorizontalOptions="FillAndExpand"/>
+                        <Image
+                            Source="time_icon.xml"/>
+                        <TimePicker
+                            Time="{Binding Time}"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
                 </StackLayout>
-                            
-                <StackLayout
-                    Orientation="Horizontal"
-                    Spacing="16">
-                    <Image
-                        Source="date_icon.xml"/>
-                    <DatePicker
-                        Date="{Binding Date}"
-                        Format="dd.MM.yyyy"
-                        HorizontalOptions="FillAndExpand"/>
-                    <Image
-                        Source="time_icon.xml"/>
-                    <TimePicker
-                        Time="{Binding Time}"
-                        HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                
-                <StackLayout
-                    VerticalOptions="EndAndExpand"
-                    Orientation="Horizontal">
-                    <Button
-                        x:Name="CancelButton"
-                        Text="Cancel"
-                        BackgroundColor="Transparent"
-                        HorizontalOptions="FillAndExpand"/>
-                    <Button
-                        x:Name="AcceptButton"
-                        CornerRadius="3"
-                        Text="Accept"
-                        HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                
+            </ScrollView>   
+            
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="CancelButton"
+                    Text="Cancel"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button
+                    x:Name="AcceptButton"
+                    CornerRadius="3"
+                    Text="Accept"
+                    HorizontalOptions="FillAndExpand"/>
             </StackLayout>
-        </ScrollView>
+        
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

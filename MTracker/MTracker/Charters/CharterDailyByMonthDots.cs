@@ -26,8 +26,8 @@ namespace MTracker.Charters
                 var entry = new Entry(sum)
                 {
                     Color = SKColor.Parse("#FFFFFF"),
-                    Label = month.ToString("MMM"),
-                    ValueLabel = sum.ToString("F2")
+                    Label = sum.ToString("F2"),
+                    ValueLabel =month.ToString("MMM")
                 };
                 filteredData.Add(entry);
             }

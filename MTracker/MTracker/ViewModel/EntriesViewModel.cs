@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MTracker.Data;
+using MTracker.Views;
 using Xamarin.Forms;
 
 namespace MTracker.ViewModel
@@ -20,6 +21,9 @@ namespace MTracker.ViewModel
         public bool EditVisible => SelectedEntries.Count == 1;
         public ToolbarItem EditItem;
 
+        public bool FilterVisible => SelectedEntries.Count == 0;
+        public ToolbarItem FilterItem;
+
         const int rotationTime = 250;
 
         public EntriesViewModel(ContentPage page)
@@ -32,6 +36,8 @@ namespace MTracker.ViewModel
 
             DeleteItem = new ToolbarItem("", "delete_icon.xml", async () => { await DeleteSelected(); });
             EditItem = new ToolbarItem("", "edit_icon.xml", async () => { await EditSelected(); });
+            FilterItem = new ToolbarItem("", "filter_icon.xml", () => { page.Navigation.PushModalAsync(new NavigationPage(new FilterPage())); });
+            CheckToolbar();
 
         }
 
@@ -80,6 +86,15 @@ namespace MTracker.ViewModel
             }
             else
                 ToolbarItems.Remove(EditItem);
+
+            if (FilterVisible)
+            {
+                if (!contentPage.ToolbarItems.Contains(FilterItem))
+                    ToolbarItems.Add(FilterItem);
+            }
+            else
+                ToolbarItems.Remove(FilterItem);
+
                 
             OnPropertyChanged("ToolbarItems");
         }
@@ -93,8 +108,13 @@ namespace MTracker.ViewModel
                 "No");
             if (dialog == false)
                 return;
-            SelectedEntries.ForEach((obj) => obj.Selected = false);
             SelectedEntries.ForEach(async (obj) => await Entries.RemoveAsync(obj));
+            ClearSelection();
+        }
+
+        public void ClearSelection()
+        {
+            SelectedEntries.ForEach((obj) => obj.Selected = false);
             SelectedEntries.Clear();
             OnPropertyChanged("Entries");
             CheckToolbar();
@@ -105,6 +125,7 @@ namespace MTracker.ViewModel
             var newItem = await NewEntryViewModel.EditEntry(contentPage, SelectedEntries[0]);
             if (newItem != null)
             {
+                ClearSelection();
                 await App.EntryAccessor.AddAsync(newItem);
             }
         }

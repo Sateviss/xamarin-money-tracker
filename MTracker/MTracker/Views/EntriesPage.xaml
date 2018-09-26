@@ -62,7 +62,7 @@
                                     FontSize="12"
                                     VerticalOptions="FillAndExpand"
                                     VerticalTextAlignment="Start"
-                                    Text="{Binding .Date, StringFormat='{0:dd.MM.yyyy HH:mm}'}"/>
+                                    Text="{Binding .Date, StringFormat='{0:yyyy-MM-dd HH:mm}'}"/>
                             </StackLayout>
                             
                             <Grid

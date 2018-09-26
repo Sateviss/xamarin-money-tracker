@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MTracker.Models;
 using MTracker.ViewModel;
@@ -22,6 +23,7 @@ namespace MTracker.Views
 
             Add = new ToolbarItem("", "add_icon.xml", async () => { await AddItem(); });
             ToolbarItems.Add(Add);
+            OnAdd += () => { };
         }
 
         public async Task NavigateToPage(int pageId)
@@ -55,11 +57,16 @@ namespace MTracker.Views
             }
         }
 
+        public static event Action OnAdd;
+
         private async Task AddItem()
         {
             var newItem = await NewEntryViewModel.EditEntry(this.Detail, new Models.Entry());
             if (newItem != null)
+            {
+                OnAdd();
                 await App.EntryAccessor.AddAsync(newItem);
+            }
         }
     }
 }

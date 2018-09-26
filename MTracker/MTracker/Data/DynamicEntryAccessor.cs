@@ -15,11 +15,12 @@ namespace MTracker.Data
         protected const int rollover = 64;
         protected int limit = rollover;
         public List<Entry> bottomList;
+        private bool skipA;
 
         private Entry _bottomEntry;
 
         public Entry BottomEntry
-        { 
+        {
             get
             {
                 return _bottomEntry;
@@ -31,7 +32,7 @@ namespace MTracker.Data
             }
         }
 
-        protected int  bottomEntryIndex = -1;
+        protected int bottomEntryIndex = -1;
         private Entry bottomestEntry;
 
         public bool MaxedOut;
@@ -44,7 +45,7 @@ namespace MTracker.Data
                                            "SELECT * " +
                                            "FROM [Entry] " +
                                            "ORDER BY [Date] DESC , [ID] ASC " +
-                                           $"LIMIT {limit-value},{value}").Result));
+                                           $"LIMIT {limit - value},{value}").Result));
 
         }
 
@@ -121,6 +122,9 @@ namespace MTracker.Data
                     System.Diagnostics.Debug.WriteLine($"Paginated {bufferList.Count}");
                 }
 
+                if (parent.SkipA && bufferList.Count != 0 && bufferList[index >= bufferList.Count ? bufferList.Count - 1 : index].Name.Contains("а"))
+                    return MoveNext();
+
                 return index < bufferList.Count;
             }
         }
@@ -155,6 +159,8 @@ namespace MTracker.Data
                 return database;
             }
         }
+
+        public bool SkipA { get => skipA; set { skipA = value; CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset, null)); } }
 
         public IEnumerator<Entry> GetEnumerator()
         {
@@ -206,11 +212,11 @@ namespace MTracker.Data
 
         public async Task<int> CountByCategoryIDAsync(int ID)
         {
-            var queryRes = 
+            var queryRes =
                 await Database.QueryAsync<Entry>(
                  "SELECT * " +
                  "FROM [Entry] " +
-                $"WHERE [CategoryID] = {ID-1}");
+                $"WHERE [CategoryID] = {ID - 1}");
             return queryRes.Count();
         }
 

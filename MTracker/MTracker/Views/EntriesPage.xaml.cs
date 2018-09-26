@@ -1,4 +1,5 @@
-﻿using MTracker.ViewModel;
+﻿using System;
+using MTracker.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +9,7 @@ namespace MTracker.Views
     public partial class EntriesPage : ContentPage
     {
         EntriesViewModel vm;
+        private Action addAction;
 
         public EntriesPage()
         {
@@ -26,6 +28,15 @@ namespace MTracker.Views
             EntriesList.ItemAppearing += (sender, e) => {
                 vm.LoadMore((Models.Entry)e.Item); 
             };
+            addAction = vm.ClearSelection;
+            MainPage.OnAdd += addAction;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            vm.ClearSelection();
+            MainPage.OnAdd -= addAction;
         }
     }
 }

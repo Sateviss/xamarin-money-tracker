@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MTracker.Views.FilterPage"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="16"
+            Spacing="16">
+            <ScrollView>
+                <StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <Picker 
+                            Title="Category is..."
+                            ItemDisplayBinding="{Binding Name}"
+                            SelectedItem="{Binding SelectedCategory}"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="CategoryPicker"/>
+                    </StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <Entry
+                            x:Name="TitleEntry"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{Binding EntryTitle}"
+                            Placeholder="Entry title contains..."/>
+                    </StackLayout>
+                    
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand">
+                            <Entry
+                                Keyboard="Numeric"
+                                Text="{Binding Amount}"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Amount is greater than..."
+                                x:Name="AmountEntryFrom"/>
+                            <Entry
+                                Keyboard="Numeric"
+                                Text="{Binding Amount}"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Amount is less than..."
+                                x:Name="AmountEntryTo"/>
+                        </StackLayout>
+                        <Label
+                            Margin="12 0 0 0"
+                            Text="BYN"
+                            FontSize="20"
+                            VerticalOptions="Center"/>
+                    </StackLayout>
+                    
+                    <StackLayout>
+                        <Label
+                            Text="Date and time are greater than..."/>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="16">
+                            <DatePicker
+                                Date="{Binding Date}"
+                                Format="yyyy-MM-dd"
+                                HorizontalOptions="FillAndExpand"/>
+                            <TimePicker
+                                Time="{Binding Time}"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <Label
+                            Text="Date and time are less than..."/>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="16">
+                            <DatePicker
+                                Date="{Binding Date}"
+                                Format="yyyy-MM-dd"
+                                HorizontalOptions="FillAndExpand"/>
+                            <TimePicker
+                                Time="{Binding Time}"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>   
+            
+            <StackLayout
+                VerticalOptions="EndAndExpand"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="CancelButton"
+                    Text="Cancel"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button
+                    x:Name="AcceptButton"
+                    CornerRadius="3"
+                    Text="Accept"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
