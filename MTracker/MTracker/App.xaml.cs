@@ -2,8 +2,10 @@
 using Xamarin.Forms.Xaml;
 using MTracker.Data;
 using MTracker.Views;
+using MTracker.Models;
 using MTracker.Resources;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace MTracker
 {
@@ -21,6 +23,7 @@ namespace MTracker
             CategoryAccessor = new SyncedCategoryAccessor();
             EntryAccessor.CollectionChanged += (sender, e) => { System.Diagnostics.Debug.WriteLine("CollectionChanged"); };
             MainPage = new MainPage();
+
         }
 
         protected override void OnStart()

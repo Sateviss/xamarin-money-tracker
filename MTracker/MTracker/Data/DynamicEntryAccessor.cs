@@ -27,7 +27,7 @@ namespace MTracker.Data
             private set
             {
                 _bottomEntry = value;
-                MaxedOut = _bottomEntry.Equals(bottomestEntry) ? true : false;
+                MaxedOut = _bottomEntry.Equals(bottomestEntry);
             }
         }
 
@@ -196,7 +196,7 @@ namespace MTracker.Data
 
         public void Add(Entry entry)
         {
-            AddAsync(entry).Wait();
+            Task.Run(() => AddAsync(entry)).GetAwaiter().GetResult();
         }
 
         public int CountByCategoryID(int ID)
