@@ -6,6 +6,7 @@ using MTracker.Models;
 using MTracker.Resources;
 using System.Globalization;
 using System.Collections.Generic;
+using MTracker.ViewModel;
 
 namespace MTracker
 {
@@ -15,15 +16,16 @@ namespace MTracker
         public static DynamicEntryAccessor EntryAccessor;
         public static SyncedCategoryAccessor CategoryAccessor;
 
+        public static string Currency = "$";
+
         public App()
         {
-            //Text.Culture = new CultureInfo("ru-RU");
+            SettingsViewModel.LoadAndApplySettings();
             InitializeComponent();
             EntryAccessor = new DynamicEntryAccessor();
             CategoryAccessor = new SyncedCategoryAccessor();
             EntryAccessor.CollectionChanged += (sender, e) => { System.Diagnostics.Debug.WriteLine("CollectionChanged"); };
             MainPage = new MainPage();
-
         }
 
         protected override void OnStart()

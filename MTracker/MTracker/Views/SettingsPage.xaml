@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MTracker.Views.SettingsPage"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Frame
+                        Padding="0"
+                        HeightRequest="48"
+                        BackgroundColor="Transparent">
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Margin="12 16"
+                            HorizontalOptions="Fill">
+                            <Label
+                                x:Name="LanguageLabel"
+                                FontSize="16"
+                                Text="Language"
+                                HorizontalOptions="StartAndExpand"/>
+                            <Picker
+                                Title=""
+                                x:Name="LangPicker"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedIndex="{Binding SelectedIndex}"
+                                FontSize="Default"
+                                Margin="-10"
+                                WidthRequest="150"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        Padding="0"
+                        HeightRequest="48"
+                        BackgroundColor="Transparent">
+                        <StackLayout
+                            HeightRequest="48"
+                            Orientation="Horizontal"
+                            Padding="12 16 12 16"
+                            HorizontalOptions="Fill">
+                            <Label
+                                x:Name="CurrencyLabel"
+                                FontSize="16"
+                                Text="Curency string"
+                                HorizontalOptions="StartAndExpand"/>
+                            <Entry
+                                Text="{Binding Currency}"
+                                FontSize="Default"
+                                Margin="-10"
+                                WidthRequest="150"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            
+            <StackLayout
+                Margin="12"
+                VerticalOptions="EndAndExpand"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="DiscardButton"
+                    Text="Discard"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+                <Button
+                    x:Name="ApplyButton"
+                    CornerRadius="3"
+                    Text="Apply"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

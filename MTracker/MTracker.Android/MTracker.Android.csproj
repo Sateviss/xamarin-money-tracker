@@ -103,6 +103,12 @@
     <AndroidResource Include="Resources\drawable\logo_xamarin.xml" />
     <AndroidResource Include="Resources\drawable\logo_berezh.png" />
     <AndroidResource Include="Resources\drawable\app_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\splashscreen.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

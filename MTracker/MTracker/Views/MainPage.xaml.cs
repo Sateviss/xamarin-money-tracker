@@ -42,15 +42,18 @@ namespace MTracker.Views
                     case MenuItemType.Categories:
                         Pages.Add(pageId, new NavigationPage(new CategoriesPage()));
                         break;
+                    case MenuItemType.Settings:
+                        Pages.Add(pageId, new NavigationPage(new SettingsPage()));
+                        break;
                 }
             }
 
             var newPage = Pages[pageId];
             if (newPage != null && Detail != newPage)
             {
+                newPage.Parent = null;
                 Detail = newPage;
-                if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
+                await Task.Delay(200);
                 IsPresented = false;
             }
         }

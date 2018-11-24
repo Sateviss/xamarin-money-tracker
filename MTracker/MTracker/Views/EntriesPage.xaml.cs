@@ -12,8 +12,8 @@ namespace MTracker.Views
         public EntriesPage()
         {
             InitializeComponent();
-
             vm = new EntriesViewModel(this);
+            this.Disappearing += (o, args) => { vm.DeselectAll(); };
             BindingContext = vm;
             vm.PropertyChanged += (sender, e) =>
             {

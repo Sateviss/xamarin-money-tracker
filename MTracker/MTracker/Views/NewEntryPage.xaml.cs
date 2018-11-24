@@ -31,9 +31,12 @@ namespace MTracker.Views
             AcceptButton.Text = Text.AcceptLabel;
 
             CategoryPicker.ItemsSource = viewModel.Categories;
+            System.Diagnostics.Debug.WriteLine(viewModel.Categories.IndexOf(viewModel.SelectedCategory));
+            CategoryPicker.SelectedIndex = viewModel.Categories.IndexOf(viewModel.SelectedCategory);
 
             CancelButton.Clicked += (sender, e) => viewModel.Cancel();
             AcceptButton.Clicked += (sender, e) => viewModel.Accept();
+            CurrencyLabel.Text = App.Currency;
             TitleEntry.IsTextPredictionEnabled = true;
 
             viewModel.OnTitleError += () => { ErrorTitle.FadeTo(1); };

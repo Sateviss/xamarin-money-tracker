@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Text.RegularExpressions;
 using MTracker.Models;
 using MTracker.Resources;
 using Xamarin.Forms;
@@ -11,7 +13,6 @@ namespace MTracker.Views
     public partial class MenuPage : ContentPage
     {
         MainPage MainPage { get => (MainPage)Application.Current.MainPage; }
-
         class MenuItem
         {
             public int ID { get; set; }
@@ -23,12 +24,12 @@ namespace MTracker.Views
         public MenuPage()
         {
             InitializeComponent();
-
             Items = new List<MenuItem>{
                 new MenuItem {ID = (int)MenuItemType.Charts, Title = Text.ChartPageLabel},
                 new MenuItem {ID = (int)MenuItemType.Entries, Title = Text.EntriesPageLabel},
                 new MenuItem {ID = (int)MenuItemType.Categories, Title = Text.CategoriesPageLabel},
-                new MenuItem {ID = (int)MenuItemType.About, Title = Text.AboutPageLabel}
+                new MenuItem {ID = (int)MenuItemType.Settings, Title = Text.SettingsPageLabel},
+                new MenuItem {ID = (int)MenuItemType.About, Title = Text.AboutPageLabel},
             };
 
             ListViewMenu.ItemsSource = Items;

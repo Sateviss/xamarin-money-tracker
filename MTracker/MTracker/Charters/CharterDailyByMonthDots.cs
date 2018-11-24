@@ -33,8 +33,9 @@ namespace MTracker.Charters
                 filteredData.Add(entry);
             }
 
-            chart = new PointChart
+            chart = new LineChart
             {
+                LineMode = LineMode.Straight,
                 BackgroundColor = SKColor.Parse("#00000000"),
                 Entries = filteredData,
                 LabelTextSize = 40,

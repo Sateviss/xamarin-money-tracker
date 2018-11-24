@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -65,8 +66,7 @@ namespace MTracker.Data
                                                                "FROM [Entry] " +
                                                                "ORDER BY [Date] DESC , [ID] ASC " +
                                                                $"LIMIT {offset},{(offset > parent.limit ? 0 : Math.Min(rollover, parent.limit - offset))}").Result;
-                if (bufferList.Count != 0)
-                    lastBuffered = bufferList.Count >= 1 ? bufferList.Last() : lastBuffered;
+                lastBuffered = bufferList.Any() ? bufferList.Last() : lastBuffered;
                 if (parent.bottomEntryIndex < index + bufferList.Count || (parent.BottomEntry == null && lastBuffered != null))
                 {
                     parent.bottomList = bufferList;
@@ -221,10 +221,10 @@ namespace MTracker.Data
 
         public async Task<List<Entry>> GetFromDateAsync(DateTime date)
         {
-            return await Database.QueryAsync<Entry>(
-                         "SELECT * " +
-                         "FROM [Entry] " +
-                        $"WHERE [Date] > {date.ToShortDateString()}");
+            var q = "SELECT * " +
+                    "FROM [Entry] " +
+                    $"WHERE [Date] > { date.ToString("MM'/'dd'/'yyyy") }";
+            return await Database.QueryAsync<Entry>(q);
         }
     }
 }
