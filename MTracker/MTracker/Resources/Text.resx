@@ -21,6 +21,43 @@
         <value>Entries</value>
     </data>
     
+        <!-- SETTINGS PAGE -->
+    
+        <data name="SettingsPageLabel" xml:space="preserve">
+            <value>Settings</value>
+        </data>
+        
+        <data name="EnglishLabel" xml:space="preserve">
+            <value>English</value>
+        </data>
+    
+        <data name="RussianLabel" xml:space="preserve">
+            <value>Russian</value>
+        </data>
+    
+        <data name="DiscardLabel" xml:space="preserve">
+            <value>Discard</value>
+        </data>
+    
+        <data name="ApplyLabel" xml:space="preserve">
+            <value>Apply</value>
+        </data>
+    
+        <data name="LanguageLabel" xml:space="preserve">
+            <value>Language</value>
+        </data>
+    
+        <data name="CurrencyLabel" xml:space="preserve">
+            <value>Currency</value>
+        </data>
+    
+        <data name="Restart" xml:space="preserve">
+            <value>Restart app to apply language change</value>
+        </data>
+    
+        <data name="Ok" xml:space="preserve">
+            <value>OK</value>
+        </data>
     
         <!-- CHART PAGE -->
     

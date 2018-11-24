@@ -18,8 +18,46 @@
     </data>    
     <data name="EntriesPageLabel" xml:space="preserve">
         <value>Записи</value>
-    </data>
-
+    </data>   
+    
+        <!-- SETTINGS PAGE -->
+    
+        <data name="SettingsPageLabel" xml:space="preserve">
+            <value>Настройки</value>
+        </data>
+                
+        <data name="EnglishLabel" xml:space="preserve">
+            <value>Английский</value>
+        </data>
+    
+        <data name="RussianLabel" xml:space="preserve">
+            <value>Русский</value>
+        </data>
+            
+        <data name="DiscardLabel" xml:space="preserve">
+            <value>Сбросить</value>
+        </data>
+    
+        <data name="ApplyLabel" xml:space="preserve">
+            <value>Применить</value>
+        </data>
+    
+        <data name="LanguageLabel" xml:space="preserve">
+            <value>Язык</value>
+        </data>
+    
+        <data name="CurrencyLabel" xml:space="preserve">
+            <value>Валюта</value>
+        </data>
+    
+        <data name="Restart" xml:space="preserve">
+            <value>Перезапустите приложение чтобы увидеть изменение языка</value>
+        </data>
+    
+        <data name="Ok" xml:space="preserve">
+            <value>OK</value>
+        </data>
+    
         <!-- CHART PAGE -->
     
 

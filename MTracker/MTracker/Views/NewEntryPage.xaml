@@ -78,6 +78,7 @@
                     </Grid>
                     
                     <Label
+                        x:Name="CurrencyLabel"
                         Margin="12 0 0 0"
                         Text="BYN"
                         FontSize="20"

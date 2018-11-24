@@ -58,7 +58,7 @@ namespace MTracker.ViewModel
         public Category SelectedCategory
         {
             get => CategoryID == -1 ? null : App.CategoryAccessor.GetByID(CategoryID);
-            set => CategoryID = value != null? value.ID-1:-1;
+            //set => CategoryID = value != null? value.ID-1:-1;
         }
 
         public string Amount

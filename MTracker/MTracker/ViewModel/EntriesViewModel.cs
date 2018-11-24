@@ -47,12 +47,12 @@ namespace MTracker.ViewModel
 
         public Command ClickCommand => new Command(async (o) => { await ClickEntry(o); });
 
-        public async Task ClickEntry(object o)
+        public async Task ClickEntry(object o, bool skipAnimation = false)
         {
             var grid = o as Grid;
-            var entry = grid.BindingContext as Models.Entry;
-            var rotationTask = grid.RotateYTo(180 - entry.Rotation, rotationTime);
-            await Task.Delay(rotationTime / 2);
+            var entry = (o is Models.Entry)?(o as Models.Entry):(grid.BindingContext as Models.Entry);
+            var rotationTask = skipAnimation?Task.Delay(0):grid.RotateYTo(180 - entry.Rotation, rotationTime);
+            await Task.Delay(skipAnimation?0:rotationTime / 2);
             entry.Selected = !entry.Selected;
 
             if (SelectedEntries.Contains(entry))
@@ -108,6 +108,12 @@ namespace MTracker.ViewModel
             {
                 await App.EntryAccessor.AddAsync(newItem);
             }
+        }
+
+        public void DeselectAll()
+        {
+            while (SelectedEntries.Count != 0)
+                ClickEntry(SelectedEntries[0], true).Wait();
         }
     }
 }

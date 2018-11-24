@@ -59,6 +59,60 @@ namespace MTracker.Resources {
             }
         }
         
+        internal static string SettingsPageLabel {
+            get {
+                return ResourceManager.GetString("SettingsPageLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnglishLabel {
+            get {
+                return ResourceManager.GetString("EnglishLabel", resourceCulture);
+            }
+        }
+        
+        internal static string RussianLabel {
+            get {
+                return ResourceManager.GetString("RussianLabel", resourceCulture);
+            }
+        }
+        
+        internal static string DiscardLabel {
+            get {
+                return ResourceManager.GetString("DiscardLabel", resourceCulture);
+            }
+        }
+        
+        internal static string ApplyLabel {
+            get {
+                return ResourceManager.GetString("ApplyLabel", resourceCulture);
+            }
+        }
+        
+        internal static string LanguageLabel {
+            get {
+                return ResourceManager.GetString("LanguageLabel", resourceCulture);
+            }
+        }
+        
+        internal static string CurrencyLabel {
+            get {
+                return ResourceManager.GetString("CurrencyLabel", resourceCulture);
+            }
+        }
+        
+        internal static string Restart {
+            get {
+                return ResourceManager.GetString("Restart", resourceCulture);
+            }
+        }
+        
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
         internal static string ChartPageLabel {
             get {
                 return ResourceManager.GetString("ChartPageLabel", resourceCulture);

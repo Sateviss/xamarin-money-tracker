@@ -21,7 +21,7 @@ namespace MTracker.Models
 
         public const float ValueNull = -0.80085135f;
 
-        public const int CutLength = 16;
+        public const int CutLength = 13;
 
         public Entry GetCopy() => MemberwiseClone() as Entry;
 
@@ -33,8 +33,8 @@ namespace MTracker.Models
                 int log1000 = (int)Math.Floor(Math.Log10(Amount)/3);
                 var powers = new List<string> {"", "K", "M", "G", "T", "P", "E", "Z" };
                 var ret = log1000>0?
-                    string.Format("{0:F0}{1} BYN", Amount / (Math.Pow(10, 3*log1000)), powers[log1000]) :
-                    string.Format("{0:F2} BYN", Amount);
+                    string.Format("{0:F0}{1} {2}", Amount / (Math.Pow(10, 3*log1000)), powers[log1000], App.Currency) :
+                          string.Format("{0:F2} {1}", Amount, App.Currency);
                 return ret;
             }
         }

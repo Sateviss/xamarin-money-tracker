@@ -10,9 +10,9 @@
             <Frame
                 HeightRequest="150">
                 <Image
-                    Source="https://i.redd.it/r28ybdp8p7l11.jpg"
+                    Source="https://www.newstatesman.com/sites/default/files/styles/lead_image/public/Longreads_2018/05/2018_18_karl_marx_opener.jpg"
                     HorizontalOptions="CenterAndExpand"
-                    Scale="3"/>
+                    Scale="2"/>
             </Frame>
              <ListView x:Name="ListViewMenu" HasUnevenRows="True">
                 <ListView.ItemTemplate>
